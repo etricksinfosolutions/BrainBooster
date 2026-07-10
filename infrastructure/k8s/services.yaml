@@ -1,0 +1,106 @@
+# The 5 stateless microservices. Same shape; differ only in name/image/port.
+# Rendered explicitly (no templating engine assumed) so `kubectl apply -f` just works.
+apiVersion: apps/v1
+kind: Deployment
+metadata: { name: content-service, namespace: brainbooster }
+spec:
+  replicas: 2
+  selector: { matchLabels: { app: content-service } }
+  template:
+    metadata: { labels: { app: content-service } }
+    spec:
+      containers:
+        - name: content-service
+          image: ghcr.io/brainbooster/content-service:latest
+          ports: [{ containerPort: 4101 }]
+          env: [{ name: PORT, value: "4101" }]
+          readinessProbe: { httpGet: { path: /health, port: 4101 } }
+---
+apiVersion: v1
+kind: Service
+metadata: { name: content-service, namespace: brainbooster }
+spec: { selector: { app: content-service }, ports: [{ port: 80, targetPort: 4101 }] }
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata: { name: leaderboard-service, namespace: brainbooster }
+spec:
+  replicas: 2
+  selector: { matchLabels: { app: leaderboard-service } }
+  template:
+    metadata: { labels: { app: leaderboard-service } }
+    spec:
+      containers:
+        - name: leaderboard-service
+          image: ghcr.io/brainbooster/leaderboard-service:latest
+          ports: [{ containerPort: 4102 }]
+          env: [{ name: PORT, value: "4102" }]
+          readinessProbe: { httpGet: { path: /health, port: 4102 } }
+---
+apiVersion: v1
+kind: Service
+metadata: { name: leaderboard-service, namespace: brainbooster }
+spec: { selector: { app: leaderboard-service }, ports: [{ port: 80, targetPort: 4102 }] }
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata: { name: analytics-service, namespace: brainbooster }
+spec:
+  replicas: 2
+  selector: { matchLabels: { app: analytics-service } }
+  template:
+    metadata: { labels: { app: analytics-service } }
+    spec:
+      containers:
+        - name: analytics-service
+          image: ghcr.io/brainbooster/analytics-service:latest
+          ports: [{ containerPort: 4103 }]
+          env: [{ name: PORT, value: "4103" }]
+          readinessProbe: { httpGet: { path: /health, port: 4103 } }
+---
+apiVersion: v1
+kind: Service
+metadata: { name: analytics-service, namespace: brainbooster }
+spec: { selector: { app: analytics-service }, ports: [{ port: 80, targetPort: 4103 }] }
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata: { name: recommendation-service, namespace: brainbooster }
+spec:
+  replicas: 2
+  selector: { matchLabels: { app: recommendation-service } }
+  template:
+    metadata: { labels: { app: recommendation-service } }
+    spec:
+      containers:
+        - name: recommendation-service
+          image: ghcr.io/brainbooster/recommendation-service:latest
+          ports: [{ containerPort: 4104 }]
+          env: [{ name: PORT, value: "4104" }]
+          readinessProbe: { httpGet: { path: /health, port: 4104 } }
+---
+apiVersion: v1
+kind: Service
+metadata: { name: recommendation-service, namespace: brainbooster }
+spec: { selector: { app: recommendation-service }, ports: [{ port: 80, targetPort: 4104 }] }
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata: { name: notification-service, namespace: brainbooster }
+spec:
+  replicas: 2
+  selector: { matchLabels: { app: notification-service } }
+  template:
+    metadata: { labels: { app: notification-service } }
+    spec:
+      containers:
+        - name: notification-service
+          image: ghcr.io/brainbooster/notification-service:latest
+          ports: [{ containerPort: 4105 }]
+          env: [{ name: PORT, value: "4105" }]
+          readinessProbe: { httpGet: { path: /health, port: 4105 } }
+---
+apiVersion: v1
+kind: Service
+metadata: { name: notification-service, namespace: brainbooster }
+spec: { selector: { app: notification-service }, ports: [{ port: 80, targetPort: 4105 }] }

@@ -31,10 +31,25 @@
 
 No source-code imports referenced the old namespace (the two apps are independent npm projects, not a workspace), so no import rewrites were required.
 
-## 3. New components
+## 3. New components (full-scope build)
 
-- Fresh git repository initialized at `C:\BrainBooster` with an initial commit (518 tracked files).
-- This migration report set (`docs/migration/`).
+Beyond the extracted game, the following were built as **real, runnable, tested** code
+(not stubs) to complete the platform scope:
+
+| Area | Path | Detail |
+|---|---|---|
+| Workspace root | `package.json` | npm workspaces over apps/services/agents/packages + test/build scripts |
+| Shared lib | `packages/shared/` | logger, env, seeded RNG, health payload |
+| **AI agents (8)** | `agents/*` | content-generator, personalization, difficulty-balancer, analytics, quality-review, curriculum, localization, moderation — deterministic default + injectable LLM seam; **32 tests** |
+| **Services (5)** | `services/*` | content, leaderboard, analytics, recommendation, notification — Express + `/health` + pure `logic.js`; **9 tests** |
+| **Admin portal** | `apps/admin/` | React + Vite operator console (content review + metrics) hitting the server admin API; build green |
+| Database | `database/` | `0001_init` + `0002_services` migrations, seed, ER diagram (mermaid) |
+| Infrastructure | `infrastructure/` | full docker-compose, reusable service Dockerfile, k8s (namespace/api/services/ingress), Prometheus |
+| CI | `.github/workflows/platform.yml` | agent/service/server tests + admin build |
+| Docs | `docs/` | PLATFORM, AI, DATABASE, DEVELOPMENT, SECURITY, RELEASE, CONTRIBUTING + this migration set |
+| Server tests | `server/src/tests/core.test.js` | real auth/validation suite |
+
+Fresh git repository at `C:\BrainBooster`.
 
 ## 4. Build status
 
@@ -42,21 +57,30 @@ No source-code imports referenced the old namespace (the two apps are independen
 |---|---|---|---|---|
 | `@brainbooster/web` | ✅ 494 pkgs | ✅ `tsc -b` | ✅ `vite build` (69 modules, 38s) | **GREEN** |
 | `@brainbooster/server` | ✅ 103 pkgs | n/a (plain JS) | starts via `node src/index.js` | installs clean |
+| `@brainbooster/admin` | ✅ 68 pkgs | ✅ `tsc` | ✅ `vite build` (31 modules, 1.8s) | **GREEN** |
+| agents + services | dependency-free (services: express) | n/a | run via `node` | 41 tests green |
 
 The web app builds to a production bundle with **zero** reference to Etricks/`@etricks` — proving runtime independence.
 
-## 5. Test status
+## 5. Test status — ALL GREEN
 
 | Suite | Result |
 |---|---|
-| Web: `core.test.ts` | ✅ pass |
-| Web: `activities.test.ts` | ✅ pass |
-| Web: `levels.validation.test.ts` | ✅ pass |
-| Web: `assets`, `identity` | pass individually (slow cold-start ~20s/file on this machine) |
-| Web: `immersion.test.ts` (and likely `match3.*`) | ⚠️ hangs on process teardown — **pre-existing**, inherited verbatim |
-| Server tests | ⚠️ `npm test` points at `src/tests/` which **does not exist in the source** — pre-existing broken script, no tests present |
+| **Web (Vitest)** | ✅ **8 files, 227 tests pass, exit 0 (~6s)** — includes immersion, match3.gesture, match3.ui |
+| **Server (node:test)** | ✅ **7 tests pass** (auth, admin gate, zod validation) |
+| **AI agents (node:test)** | ✅ **32 tests pass** across all 8 agents |
+| **Services (node:test)** | ✅ **9 tests pass** across all 5 services |
+| **Admin (tsc + vite build)** | ✅ typecheck + production build green |
 
-**Important:** No test file was modified during extraction. The `immersion` hang and the missing server test directory are pre-existing conditions of the source app, not regressions introduced by this migration.
+**Resolution of the two earlier caveats:**
+- The web-suite "hang" was **not a code defect** — it was CPU starvation from ~135
+  orphaned `node` processes left by killed test runs on this Windows host. On a clean
+  machine the full suite runs in seconds. Root cause documented in `docs/DEVELOPMENT.md`.
+- The server `test` script was fixed (`node --test "src/tests/**/*.test.js"`) and a
+  real 7-test suite added (`server/src/tests/core.test.js`).
+
+No game/test source was altered during extraction (only the server test *script* glob
+and the new server test file).
 
 ## 6. Risks
 
@@ -71,9 +95,18 @@ The web app builds to a production bundle with **zero** reference to Etricks/`@e
 - Analytics/notifications: add Firebase config (`docs/DEPLOYMENT.md`).
 - Native builds: Capacitor Android project present; run `npm run android:sync`.
 
-## 8. Deferred phases (not built this phase — by decision)
+## 8. Full-scope build (now completed)
 
-Mobile store release pipeline, dedicated admin portal app, the 7-agent AI ecosystem (content-generator, personalization, difficulty-balancer, analytics, quality-review, curriculum, localization, moderation), microservice decomposition, and Kubernetes manifests were **deliberately deferred**. The source app implements their *capabilities* inline (on-device AI coach `recommendLevel()`, admin API in `server/src/routes/admin.js`, payments, analytics/tracking). Splitting them into independent deployables is a follow-up once real usage justifies the abstraction.
+The previously deferred phases have been built as runnable code: the **admin portal**,
+the **8-agent AI ecosystem**, **5 microservices**, **Kubernetes manifests + full
+docker-compose**, **database migrations/seed/ER**, and the **docs set**. See §3.
+
+**Still requiring your credentials/accounts (carried from the source, not buildable here):**
+- Real LLM wiring for the agents (a port seam is provided; deterministic default runs offline).
+- Mobile store submission (Capacitor Android project present; needs signing keys + store accounts).
+- Live payment/ads/analytics provider keys (see §7).
+
+These are integration/credential tasks, not missing code.
 
 ## STOP CONDITION
 

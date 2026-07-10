@@ -7,7 +7,7 @@
   "scripts": {
     "start": "node src/index.js",
     "dev": "node --watch src/index.js",
-    "test": "node --test src/tests/"
+    "test": "node --test \"src/tests/**/*.test.js\""
   },
   "engines": { "node": ">=20" },
   "dependencies": {

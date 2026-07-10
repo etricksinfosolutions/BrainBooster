@@ -1,0 +1,15 @@
+# Prometheus scrape config for the BrainBooster stack.
+global:
+  scrape_interval: 15s
+scrape_configs:
+  - job_name: api
+    metrics_path: /api/metrics
+    static_configs: [{ targets: ["api:4000"] }]
+  - job_name: services
+    static_configs:
+      - targets:
+          - "content-service:4101"
+          - "leaderboard-service:4102"
+          - "analytics-service:4103"
+          - "recommendation-service:4104"
+          - "notification-service:4105"

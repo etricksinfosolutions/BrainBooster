@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api
+  namespace: brainbooster
+spec:
+  replicas: 2
+  selector: { matchLabels: { app: api } }
+  template:
+    metadata: { labels: { app: api } }
+    spec:
+      containers:
+        - name: api
+          image: ghcr.io/brainbooster/api:latest
+          ports: [{ containerPort: 4000 }]
+          env:
+            - name: DATABASE_URL
+              valueFrom: { secretKeyRef: { name: bb-secrets, key: database-url } }
+            - name: JWT_SECRET
+              valueFrom: { secretKeyRef: { name: bb-secrets, key: jwt-secret } }
+          readinessProbe: { httpGet: { path: /api/health, port: 4000 }, initialDelaySeconds: 5, periodSeconds: 10 }
+          livenessProbe: { httpGet: { path: /api/health, port: 4000 }, initialDelaySeconds: 15, periodSeconds: 20 }
+          resources:
+            requests: { cpu: 100m, memory: 128Mi }
+            limits: { cpu: 500m, memory: 512Mi }
+---
+apiVersion: v1
+kind: Service
+metadata: { name: api, namespace: brainbooster }
+spec:
+  selector: { app: api }
+  ports: [{ port: 80, targetPort: 4000 }]

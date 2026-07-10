@@ -1,0 +1,25 @@
+name: platform
+on:
+  push: { branches: [main] }
+  pull_request:
+jobs:
+  agents-and-services:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - name: Agent unit tests
+        run: node --test "agents/**/*.test.js"
+      - name: Service unit tests
+        run: node --test "services/**/*.test.js"
+      - name: Server unit tests
+        run: npm --prefix server ci && npm --prefix server test
+  admin-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - run: npm --prefix apps/admin install --no-workspaces
+      - run: npm --prefix apps/admin run build

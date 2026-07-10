@@ -1,0 +1,23 @@
+{
+  "name": "brainbooster",
+  "version": "1.0.0",
+  "private": true,
+  "description": "BrainBooster — standalone educational game platform (web, server, admin, AI agents, services)",
+  "workspaces": [
+    "apps/*",
+    "server",
+    "services/*",
+    "agents/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "test:agents": "node --test \"agents/**/*.test.js\"",
+    "test:services": "node --test \"services/**/*.test.js\"",
+    "test:server": "npm --prefix server test",
+    "test:web": "npm --prefix apps/web test",
+    "test:all": "npm run test:agents && npm run test:services && npm run test:server",
+    "build:web": "npm --prefix apps/web run build",
+    "build:admin": "npm --prefix apps/admin run build"
+  },
+  "engines": { "node": ">=20" }
+}

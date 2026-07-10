@@ -1,0 +1,72 @@
+# Full BrainBooster stack: database, monolith API, web, admin, and the 5 services.
+# Run from the repo root:  docker compose -f infrastructure/docker-compose.full.yml up --build
+version: "3.9"
+
+x-service: &node-service
+  build:
+    context: ..
+    dockerfile: infrastructure/docker/service.Dockerfile
+  restart: unless-stopped
+  depends_on: [db]
+
+services:
+  db:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_DB: brainbooster
+      POSTGRES_USER: bb
+      POSTGRES_PASSWORD: bb
+    ports: ["5432:5432"]
+    volumes:
+      - ../database/migrations:/docker-entrypoint-initdb.d:ro
+      - bb_pgdata:/var/lib/postgresql/data
+
+  api:
+    build: { context: ../server }
+    environment:
+      DATABASE_URL: postgres://bb:bb@db:5432/brainbooster
+      JWT_SECRET: change-me-in-prod
+    ports: ["4000:4000"]
+    depends_on: [db]
+
+  web:
+    build: { context: ../apps/web }
+    ports: ["8080:80"]
+
+  admin:
+    build: { context: ../apps/admin }
+    environment: { VITE_API_BASE: http://localhost:4000 }
+    ports: ["8081:80"]
+
+  content-service:
+    <<: *node-service
+    build: { context: .., dockerfile: infrastructure/docker/service.Dockerfile, args: { SERVICE_DIR: services/content-service } }
+    environment: { PORT: 4101 }
+    ports: ["4101:4101"]
+
+  leaderboard-service:
+    <<: *node-service
+    build: { context: .., dockerfile: infrastructure/docker/service.Dockerfile, args: { SERVICE_DIR: services/leaderboard-service } }
+    environment: { PORT: 4102 }
+    ports: ["4102:4102"]
+
+  analytics-service:
+    <<: *node-service
+    build: { context: .., dockerfile: infrastructure/docker/service.Dockerfile, args: { SERVICE_DIR: services/analytics-service } }
+    environment: { PORT: 4103 }
+    ports: ["4103:4103"]
+
+  recommendation-service:
+    <<: *node-service
+    build: { context: .., dockerfile: infrastructure/docker/service.Dockerfile, args: { SERVICE_DIR: services/recommendation-service } }
+    environment: { PORT: 4104 }
+    ports: ["4104:4104"]
+
+  notification-service:
+    <<: *node-service
+    build: { context: .., dockerfile: infrastructure/docker/service.Dockerfile, args: { SERVICE_DIR: services/notification-service } }
+    environment: { PORT: 4105 }
+    ports: ["4105:4105"]
+
+volumes:
+  bb_pgdata:

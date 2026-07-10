@@ -3,11 +3,6 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: './',
+  server: { port: 5174 },
   build: { outDir: 'dist', sourcemap: false },
-  test: {
-    environment: 'node',
-    testTimeout: 15000,
-    hookTimeout: 15000,
-  }
-} as any)
+})
