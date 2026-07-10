@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "note": "Server-authored activity types that EXTEND the client's built-in catalogue. The app downloads these in small batches and merges them (mergeActivityTypes) with no app update. Add rows here (or, in production, to the activity_templates table) to grow the library — seasonal events, new mechanics' content packs, etc.",
+  "types": [
+    { "id": "sort-recycling", "name": "Recycle Rangers", "icon": "♻️", "mechanic": "sorting", "skill": "knowledge", "category": "Sorting", "minTier": 1, "maxTier": 4, "themes": ["city"], "pool": "household", "fresh": true },
+    { "id": "match3-space", "name": "Galaxy Gems", "icon": "🪐", "mechanic": "match3", "skill": "observation", "category": "Match-3", "minTier": 1, "maxTier": 4, "themes": ["space"], "pool": "cartoon", "fresh": true },
+    { "id": "find-difference-winter", "name": "Winter Wonders", "icon": "❄️", "mechanic": "find-difference", "skill": "observation", "category": "Spot", "minTier": 0, "maxTier": 4, "themes": ["snow"], "pool": "animals", "fresh": true },
+    { "id": "maze-castle", "name": "Castle Corridors", "icon": "🏰", "mechanic": "maze", "skill": "logic", "category": "Maze", "minTier": 2, "maxTier": 4, "themes": ["magic"], "fresh": true },
+    { "id": "sliding-treasure", "name": "Treasure Tiles", "icon": "🪙", "mechanic": "sliding", "skill": "logic", "category": "Puzzle", "minTier": 1, "maxTier": 4, "themes": ["pirate"], "fresh": true },
+    { "id": "quiz-halloween", "name": "Spooky Season Quiz", "icon": "🎃", "mechanic": "quiz", "skill": "knowledge", "category": "Seasonal", "minTier": 0, "maxTier": 4, "quizCategory": "knowledge" }
+  ]
+}

@@ -1,0 +1,40 @@
+# Brain Booster Kids — local production-like stack
+# Usage: docker compose up --build
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: brainbooster
+      POSTGRES_PASSWORD: brainbooster
+      POSTGRES_DB: brainbooster
+    volumes:
+      - dbdata:/var/lib/postgresql/data
+      - ./server/sql/schema.sql:/docker-entrypoint-initdb.d/01-schema.sql:ro
+      - ./server/sql/activities.sql:/docker-entrypoint-initdb.d/02-activities.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U brainbooster"]
+      interval: 5s
+      retries: 10
+
+  api:
+    build: ./server
+    environment:
+      DATABASE_URL: postgres://brainbooster:brainbooster@db:5432/brainbooster
+      JWT_SECRET: change-me-in-production
+      CORS_ORIGINS: http://localhost:8080
+      PORT: 4000
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "4000:4000"
+
+  web:
+    build: ./apps/web
+    ports:
+      - "8080:80"
+    depends_on:
+      - api
+
+volumes:
+  dbdata:

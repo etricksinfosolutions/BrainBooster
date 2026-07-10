@@ -1,0 +1,24 @@
+{
+  "name": "@brainbooster/server",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Brain Booster Kids — API server (auth, progress sync, payments, admin)",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js",
+    "test": "node --test src/tests/"
+  },
+  "engines": { "node": ">=20" },
+  "dependencies": {
+    "express": "^4.19.2",
+    "cors": "^2.8.5",
+    "helmet": "^7.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "bcryptjs": "^2.4.3",
+    "pg": "^8.12.0",
+    "express-rate-limit": "^7.4.0",
+    "zod": "^3.23.8",
+    "dotenv": "^16.4.5"
+  }
+}

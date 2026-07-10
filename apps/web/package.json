@@ -1,0 +1,44 @@
+{
+  "name": "@brainbooster/web",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "build:prod": "npm run validate:assets && npm run build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "gen:sprites": "node scripts/gen-sprites.mjs",
+    "gen:variants": "node scripts/gen-variants.mjs",
+    "art:review": "node scripts/art-review.mjs",
+    "art:review:strict": "node scripts/art-review.mjs --strict",
+    "validate:assets": "node scripts/validate-assets.mjs",
+    "validate:assets:advisory": "node scripts/validate-assets.mjs --advisory",
+    "android:assets": "capacitor-assets generate --android --iconBackgroundColor #ffffff --splashBackgroundColor #ffffff --splashBackgroundColorDark #1b1740",
+    "android:sync": "npm run build:prod && cap sync android",
+    "android:open": "npm run android:sync && cap open android",
+    "android:apk": "npm run android:sync && cd android && ./gradlew assembleDebug",
+    "android:bundle": "npm run android:sync && cd android && ./gradlew bundleRelease"
+  },
+  "dependencies": {
+    "@capacitor/android": "^6.2.1",
+    "@capacitor/app": "^6.0.3",
+    "@capacitor/core": "^6.2.1",
+    "@capacitor/share": "^6.0.4",
+    "@capacitor/splash-screen": "^6.0.4",
+    "@capacitor/status-bar": "^6.0.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@capacitor/assets": "^3.0.5",
+    "@capacitor/cli": "^6.2.1",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.11",
+    "vitest": "^2.1.8"
+  }
+}

@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#4b3a7a" />
+    <meta name="description" content="Brain Booster Kids — joyful brain games for ages 4-12" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="icon" href="./icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="./etricks-logo.png" />
+    <title>Brain Booster Kids — by EtricksGames</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <script>
+      // Register the offline service worker only on the real web host — not in
+      // the Capacitor native shell (served from https://localhost) or dev.
+      if ('serviceWorker' in navigator && location.protocol === 'https:' && location.hostname !== 'localhost') {
+        window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(()=>{}));
+      }
+    </script>
+  </body>
+</html>

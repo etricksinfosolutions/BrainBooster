@@ -1,0 +1,5642 @@
+[
+  {
+    "slug": "toothbrush",
+    "key": "🪥",
+    "subject": "toothbrush",
+    "severity": "critical",
+    "dim": "",
+    "message": "background remnant / halo on frame edge (70)"
+  },
+  {
+    "slug": "toothbrush",
+    "key": "🪥",
+    "subject": "toothbrush",
+    "severity": "critical",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "white-bunny-rabbit",
+    "key": "🐇",
+    "subject": "white bunny rabbit",
+    "severity": "critical",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "white-bunny-rabbit",
+    "key": "🐇",
+    "subject": "white bunny rabbit",
+    "severity": "critical",
+    "dim": "",
+    "message": "muddy / desaturated palette"
+  },
+  {
+    "slug": "white-bunny-rabbit",
+    "key": "🐇",
+    "subject": "white bunny rabbit",
+    "severity": "critical",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "crescent-moon",
+    "key": "🌙",
+    "subject": "crescent moon",
+    "severity": "critical",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "crescent-moon",
+    "key": "🌙",
+    "subject": "crescent moon",
+    "severity": "critical",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "goat",
+    "key": "🐐",
+    "subject": "goat",
+    "severity": "critical",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "goat",
+    "key": "🐐",
+    "subject": "goat",
+    "severity": "critical",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "graceful-swan",
+    "key": "🦢",
+    "subject": "graceful swan",
+    "severity": "critical",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "graceful-swan",
+    "key": "🦢",
+    "subject": "graceful swan",
+    "severity": "critical",
+    "dim": "",
+    "message": "muddy / desaturated palette"
+  },
+  {
+    "slug": "graceful-swan",
+    "key": "🦢",
+    "subject": "graceful swan",
+    "severity": "critical",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "friendly-dolphin",
+    "key": "🐬",
+    "subject": "friendly dolphin",
+    "severity": "critical",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "friendly-dolphin",
+    "key": "🐬",
+    "subject": "friendly dolphin",
+    "severity": "critical",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "polar-bear",
+    "key": "🐻‍❄️",
+    "subject": "polar bear",
+    "severity": "critical",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "polar-bear",
+    "key": "🐻‍❄️",
+    "subject": "polar bear",
+    "severity": "critical",
+    "dim": "",
+    "message": "muddy / desaturated palette"
+  },
+  {
+    "slug": "polar-bear",
+    "key": "🐻‍❄️",
+    "subject": "polar bear",
+    "severity": "critical",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "bright-sun",
+    "key": "☀️",
+    "subject": "bright sun",
+    "severity": "critical",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "bright-sun",
+    "key": "☀️",
+    "subject": "bright sun",
+    "severity": "critical",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "friendly-snake",
+    "key": "🐍",
+    "subject": "friendly snake",
+    "severity": "critical",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "friendly-snake",
+    "key": "🐍",
+    "subject": "friendly snake",
+    "severity": "critical",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "magical-unicorn",
+    "key": "🦄",
+    "subject": "magical unicorn",
+    "severity": "critical",
+    "dim": "",
+    "message": "background remnant / halo on frame edge (56)"
+  },
+  {
+    "slug": "magical-unicorn",
+    "key": "🦄",
+    "subject": "magical unicorn",
+    "severity": "critical",
+    "dim": "",
+    "message": "subject clipped at frame edge"
+  },
+  {
+    "slug": "magical-unicorn",
+    "key": "🦄",
+    "subject": "magical unicorn",
+    "severity": "critical",
+    "dim": "",
+    "message": "muddy / desaturated palette"
+  },
+  {
+    "slug": "magical-unicorn",
+    "key": "🦄",
+    "subject": "magical unicorn",
+    "severity": "critical",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "power-plug",
+    "key": "🔌",
+    "subject": "power plug",
+    "severity": "critical",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "power-plug",
+    "key": "🔌",
+    "subject": "power plug",
+    "severity": "critical",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "brave-baby-tiger-cub",
+    "key": "🐯",
+    "subject": "brave baby tiger cub",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "brave-baby-tiger-cub",
+    "key": "🐯",
+    "subject": "brave baby tiger cub",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "happy-baby-panda",
+    "key": "🐼",
+    "subject": "happy baby panda",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "happy-baby-panda",
+    "key": "🐼",
+    "subject": "happy baby panda",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "cute-little-fox",
+    "key": "🦊",
+    "subject": "cute little fox",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "cute-little-fox",
+    "key": "🦊",
+    "subject": "cute little fox",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "friendly-baby-elephant",
+    "key": "🐘",
+    "subject": "friendly baby elephant",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "cute-green-baby-dinosaur",
+    "key": "🦕",
+    "subject": "cute green baby dinosaur",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "cute-baby-dragon",
+    "key": "🐲",
+    "subject": "cute baby dragon",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "cute-baby-dragon",
+    "key": "🐲",
+    "subject": "cute baby dragon",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "cute-friendly-robot-buddy",
+    "key": "🤖",
+    "subject": "cute friendly robot buddy",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "cute-friendly-robot-buddy",
+    "key": "🤖",
+    "subject": "cute friendly robot buddy",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "colorful-pirate-parrot",
+    "key": "🦜",
+    "subject": "colorful pirate parrot",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "colorful-pirate-parrot",
+    "key": "🦜",
+    "subject": "colorful pirate parrot",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "cuddly-teddy-bear",
+    "key": "🧸",
+    "subject": "cuddly teddy bear",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "baby-milk-bottle",
+    "key": "🍼",
+    "subject": "baby milk bottle",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "cozy-bed",
+    "key": "🛏️",
+    "subject": "cozy bed",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "wooden-chair",
+    "key": "🪑",
+    "subject": "wooden chair",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "lit-candle",
+    "key": "🕯️",
+    "subject": "lit candle",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "lit-candle",
+    "key": "🕯️",
+    "subject": "lit candle",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "pair-of-socks",
+    "key": "🧦",
+    "subject": "pair of socks",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "pair-of-socks",
+    "key": "🧦",
+    "subject": "pair of socks",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "t-shirt",
+    "key": "👕",
+    "subject": "t-shirt",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "t-shirt",
+    "key": "👕",
+    "subject": "t-shirt",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "spoon",
+    "key": "🥄",
+    "subject": "spoon",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "plate-with-fork-and-knife",
+    "key": "🍽️",
+    "subject": "plate with fork and knife",
+    "severity": "major",
+    "dim": "",
+    "message": "muddy / desaturated palette"
+  },
+  {
+    "slug": "plate-with-fork-and-knife",
+    "key": "🍽️",
+    "subject": "plate with fork and knife",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "broom",
+    "key": "🧹",
+    "subject": "broom",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "broom",
+    "key": "🧹",
+    "subject": "broom",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "television",
+    "key": "📺",
+    "subject": "television",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "television",
+    "key": "📺",
+    "subject": "television",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "golden-key",
+    "key": "🔑",
+    "subject": "golden key",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "yo-yo",
+    "key": "🪀",
+    "subject": "yo-yo",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "spool-of-thread",
+    "key": "🧵",
+    "subject": "spool of thread",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "red-party-balloon",
+    "key": "🎈",
+    "subject": "red party balloon",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "cozy-little-house",
+    "key": "🏠",
+    "subject": "cozy little house",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "wise-little-owl",
+    "key": "🦉",
+    "subject": "wise little owl",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "friendly-brown-bear",
+    "key": "🐻",
+    "subject": "friendly brown bear",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "gentle-deer",
+    "key": "🦌",
+    "subject": "gentle deer",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "gentle-deer",
+    "key": "🦌",
+    "subject": "gentle deer",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "cute-squirrel",
+    "key": "🐿️",
+    "subject": "cute squirrel",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "cute-squirrel",
+    "key": "🐿️",
+    "subject": "cute squirrel",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "red-spotted-mushroom",
+    "key": "🍄",
+    "subject": "red spotted mushroom",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "red-spotted-mushroom",
+    "key": "🍄",
+    "subject": "red spotted mushroom",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "pine-tree",
+    "key": "🌲",
+    "subject": "pine tree",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "pine-tree",
+    "key": "🌲",
+    "subject": "pine tree",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "friendly-grey-wolf",
+    "key": "🐺",
+    "subject": "friendly grey wolf",
+    "severity": "major",
+    "dim": "",
+    "message": "muddy / desaturated palette"
+  },
+  {
+    "slug": "friendly-grey-wolf",
+    "key": "🐺",
+    "subject": "friendly grey wolf",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "cute-hedgehog",
+    "key": "🦔",
+    "subject": "cute hedgehog",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "cute-hedgehog",
+    "key": "🦔",
+    "subject": "cute hedgehog",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "bird-s-nest-with-eggs",
+    "key": "🪺",
+    "subject": "bird's nest with eggs",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "bird-s-nest-with-eggs",
+    "key": "🪺",
+    "subject": "bird's nest with eggs",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "green-caterpillar",
+    "key": "🐛",
+    "subject": "green caterpillar",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "green-caterpillar",
+    "key": "🐛",
+    "subject": "green caterpillar",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "autumn-leaves",
+    "key": "🍂",
+    "subject": "autumn leaves",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "autumn-leaves",
+    "key": "🍂",
+    "subject": "autumn leaves",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "little-songbird",
+    "key": "🐦",
+    "subject": "little songbird",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "little-songbird",
+    "key": "🐦",
+    "subject": "little songbird",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "cute-bat",
+    "key": "🦇",
+    "subject": "cute bat",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "cute-bat",
+    "key": "🦇",
+    "subject": "cute bat",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "acorn",
+    "key": "🌰",
+    "subject": "acorn",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "ant",
+    "key": "🐜",
+    "subject": "ant",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "ant",
+    "key": "🐜",
+    "subject": "ant",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "big-leafy-tree",
+    "key": "🌳",
+    "subject": "big leafy tree",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "big-leafy-tree",
+    "key": "🌳",
+    "subject": "big leafy tree",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "cherry-blossom-flower",
+    "key": "🌸",
+    "subject": "cherry blossom flower",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "cherry-blossom-flower",
+    "key": "🌸",
+    "subject": "cherry blossom flower",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "hibiscus-flower",
+    "key": "🌺",
+    "subject": "hibiscus flower",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "green-leafy-sprig",
+    "key": "🌿",
+    "subject": "green leafy sprig",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "green-leafy-sprig",
+    "key": "🌿",
+    "subject": "green leafy sprig",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "friendly-moose",
+    "key": "🫎",
+    "subject": "friendly moose",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "friendly-moose",
+    "key": "🫎",
+    "subject": "friendly moose",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "cute-snail",
+    "key": "🐌",
+    "subject": "cute snail",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "cute-snail",
+    "key": "🐌",
+    "subject": "cute snail",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "happy-honeybee",
+    "key": "🐝",
+    "subject": "happy honeybee",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "happy-honeybee",
+    "key": "🐝",
+    "subject": "happy honeybee",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "colorful-butterfly",
+    "key": "🦋",
+    "subject": "colorful butterfly",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "colorful-butterfly",
+    "key": "🦋",
+    "subject": "colorful butterfly",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "tiny-fairy",
+    "key": "🧚",
+    "subject": "tiny fairy",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "tiny-fairy",
+    "key": "🧚",
+    "subject": "tiny fairy",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "magic-wand",
+    "key": "🪄",
+    "subject": "magic wand",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "magic-wand",
+    "key": "🪄",
+    "subject": "magic wand",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "wheat-stalk",
+    "key": "🌾",
+    "subject": "wheat stalk",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "wheat-stalk",
+    "key": "🌾",
+    "subject": "wheat stalk",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "spotted-cow",
+    "key": "🐄",
+    "subject": "spotted cow",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "spotted-cow",
+    "key": "🐄",
+    "subject": "spotted cow",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "hen",
+    "key": "🐔",
+    "subject": "hen",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "hen",
+    "key": "🐔",
+    "subject": "hen",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "pink-pig",
+    "key": "🐖",
+    "subject": "pink pig",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "pink-pig",
+    "key": "🐖",
+    "subject": "pink pig",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "fluffy-sheep",
+    "key": "🐑",
+    "subject": "fluffy sheep",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "red-tractor",
+    "key": "🚜",
+    "subject": "red tractor",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "sunflower",
+    "key": "🌻",
+    "subject": "sunflower",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "sunflower",
+    "key": "🌻",
+    "subject": "sunflower",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "carrot",
+    "key": "🥕",
+    "subject": "carrot",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "carrot",
+    "key": "🥕",
+    "subject": "carrot",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "corn-cob",
+    "key": "🌽",
+    "subject": "corn cob",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "corn-cob",
+    "key": "🌽",
+    "subject": "corn cob",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "brown-pony",
+    "key": "🐴",
+    "subject": "brown pony",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "brown-pony",
+    "key": "🐴",
+    "subject": "brown pony",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "rooster",
+    "key": "🐓",
+    "subject": "rooster",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "rooster",
+    "key": "🐓",
+    "subject": "rooster",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "egg",
+    "key": "🥚",
+    "subject": "egg",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "tomato",
+    "key": "🍅",
+    "subject": "tomato",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "picnic-basket",
+    "key": "🧺",
+    "subject": "picnic basket",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "green-frog",
+    "key": "🐸",
+    "subject": "green frog",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "yellow-duckling",
+    "key": "🦆",
+    "subject": "yellow duckling",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "yellow-duckling",
+    "key": "🦆",
+    "subject": "yellow duckling",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "orange-fish",
+    "key": "🐟",
+    "subject": "orange fish",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "canoe",
+    "key": "🛶",
+    "subject": "canoe",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "canoe",
+    "key": "🛶",
+    "subject": "canoe",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "wooden-log",
+    "key": "🪵",
+    "subject": "wooden log",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "sea-turtle",
+    "key": "🐢",
+    "subject": "sea turtle",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "beaver",
+    "key": "🦫",
+    "subject": "beaver",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "beaver",
+    "key": "🦫",
+    "subject": "beaver",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "water-droplet",
+    "key": "💧",
+    "subject": "water droplet",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "fishing-rod",
+    "key": "🎣",
+    "subject": "fishing rod",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "fishing-rod",
+    "key": "🎣",
+    "subject": "fishing rod",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "suspension-bridge",
+    "key": "🌉",
+    "subject": "suspension bridge",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "grey-rock",
+    "key": "🪨",
+    "subject": "grey rock",
+    "severity": "major",
+    "dim": "",
+    "message": "muddy / desaturated palette"
+  },
+  {
+    "slug": "grey-rock",
+    "key": "🪨",
+    "subject": "grey rock",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "friendly-crocodile",
+    "key": "🐊",
+    "subject": "friendly crocodile",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "coconut",
+    "key": "🥥",
+    "subject": "coconut",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "coconut",
+    "key": "🥥",
+    "subject": "coconut",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "playful-monkey",
+    "key": "🐒",
+    "subject": "playful monkey",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "playful-monkey",
+    "key": "🐒",
+    "subject": "playful monkey",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "palm-tree",
+    "key": "🌴",
+    "subject": "palm tree",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "palm-tree",
+    "key": "🌴",
+    "subject": "palm tree",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "pineapple",
+    "key": "🍍",
+    "subject": "pineapple",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "pineapple",
+    "key": "🍍",
+    "subject": "pineapple",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "green-lizard",
+    "key": "🦎",
+    "subject": "green lizard",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "sandy-beach-with-umbrella",
+    "key": "🏖️",
+    "subject": "sandy beach with umbrella",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "spiral-seashell",
+    "key": "🐚",
+    "subject": "spiral seashell",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "pink-flamingo",
+    "key": "🦩",
+    "subject": "pink flamingo",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "pink-flamingo",
+    "key": "🦩",
+    "subject": "pink flamingo",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "banana",
+    "key": "🍌",
+    "subject": "banana",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "peacock",
+    "key": "🦚",
+    "subject": "peacock",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "peacock",
+    "key": "🦚",
+    "subject": "peacock",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "tropical-fish",
+    "key": "🐠",
+    "subject": "tropical fish",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "tropical-fish",
+    "key": "🐠",
+    "subject": "tropical fish",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "mango",
+    "key": "🥭",
+    "subject": "mango",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "sleepy-sloth",
+    "key": "🦥",
+    "subject": "sleepy sloth",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "surfer-on-a-wave",
+    "key": "🏄",
+    "subject": "surfer on a wave",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "surfer-on-a-wave",
+    "key": "🏄",
+    "subject": "surfer on a wave",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "ocean-wave",
+    "key": "🌊",
+    "subject": "ocean wave",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "ocean-wave",
+    "key": "🌊",
+    "subject": "ocean wave",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "beach-umbrella",
+    "key": "⛱️",
+    "subject": "beach umbrella",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "beach-umbrella",
+    "key": "⛱️",
+    "subject": "beach umbrella",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "volleyball",
+    "key": "🏐",
+    "subject": "volleyball",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "flip-flop-sandal",
+    "key": "🩴",
+    "subject": "flip-flop sandal",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "ice-cream-cone",
+    "key": "🍦",
+    "subject": "ice cream cone",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "ice-cream-cone",
+    "key": "🍦",
+    "subject": "ice cream cone",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "kite",
+    "key": "🪁",
+    "subject": "kite",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "kite",
+    "key": "🪁",
+    "subject": "kite",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "pufferfish",
+    "key": "🐡",
+    "subject": "pufferfish",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "pufferfish",
+    "key": "🐡",
+    "subject": "pufferfish",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "sunscreen-bottle",
+    "key": "🧴",
+    "subject": "sunscreen bottle",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "coral",
+    "key": "🪸",
+    "subject": "coral",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "coral",
+    "key": "🪸",
+    "subject": "coral",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "sunrise-over-the-sea",
+    "key": "🌅",
+    "subject": "sunrise over the sea",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "blue-whale",
+    "key": "🐳",
+    "subject": "blue whale",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "blue-whale",
+    "key": "🐳",
+    "subject": "blue whale",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "friendly-shark",
+    "key": "🦈",
+    "subject": "friendly shark",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "friendly-shark",
+    "key": "🦈",
+    "subject": "friendly shark",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "baby-octopus",
+    "key": "🐙",
+    "subject": "baby octopus",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "baby-octopus",
+    "key": "🐙",
+    "subject": "baby octopus",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "red-crab",
+    "key": "🦀",
+    "subject": "red crab",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "red-crab",
+    "key": "🦀",
+    "subject": "red crab",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "lobster",
+    "key": "🦞",
+    "subject": "lobster",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "lobster",
+    "key": "🦞",
+    "subject": "lobster",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "squid",
+    "key": "🦑",
+    "subject": "squid",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "squid",
+    "key": "🦑",
+    "subject": "squid",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "cute-seal",
+    "key": "🦭",
+    "subject": "cute seal",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "bubbles",
+    "key": "🫧",
+    "subject": "bubbles",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "ship-anchor",
+    "key": "⚓",
+    "subject": "ship anchor",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "ship-anchor",
+    "key": "⚓",
+    "subject": "ship anchor",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "pirate-flag",
+    "key": "🏴‍☠️",
+    "subject": "pirate flag",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "pirate-flag",
+    "key": "🏴‍☠️",
+    "subject": "pirate flag",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "treasure-map",
+    "key": "🗺️",
+    "subject": "treasure map",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "bag-of-gold-coins",
+    "key": "💰",
+    "subject": "bag of gold coins",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "sailboat",
+    "key": "⛵",
+    "subject": "sailboat",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "telescope",
+    "key": "🔭",
+    "subject": "telescope",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "telescope",
+    "key": "🔭",
+    "subject": "telescope",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "sparkling-gem",
+    "key": "💎",
+    "subject": "sparkling gem",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "gold-coin",
+    "key": "🪙",
+    "subject": "gold coin",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "desert-island",
+    "key": "🏝️",
+    "subject": "desert island",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "desert-island",
+    "key": "🏝️",
+    "subject": "desert island",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "old-treasure-key",
+    "key": "🗝️",
+    "subject": "old treasure key",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "old-treasure-key",
+    "key": "🗝️",
+    "subject": "old treasure key",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "crossed-swords",
+    "key": "⚔️",
+    "subject": "crossed swords",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "crossed-swords",
+    "key": "⚔️",
+    "subject": "crossed swords",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "compass",
+    "key": "🧭",
+    "subject": "compass",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "golden-crown",
+    "key": "👑",
+    "subject": "golden crown",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "golden-crown",
+    "key": "👑",
+    "subject": "golden crown",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "sword",
+    "key": "🗡️",
+    "subject": "sword",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "sword",
+    "key": "🗡️",
+    "subject": "sword",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "erupting-volcano",
+    "key": "🌋",
+    "subject": "erupting volcano",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "erupting-volcano",
+    "key": "🌋",
+    "subject": "erupting volcano",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "flame",
+    "key": "🔥",
+    "subject": "flame",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "burst",
+    "key": "💥",
+    "subject": "burst",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "friendly-t-rex",
+    "key": "🦖",
+    "subject": "friendly T-Rex",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "friendly-t-rex",
+    "key": "🦖",
+    "subject": "friendly T-Rex",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "thermometer",
+    "key": "🌡️",
+    "subject": "thermometer",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "rocky-mountain",
+    "key": "⛰️",
+    "subject": "rocky mountain",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "firecracker",
+    "key": "🧨",
+    "subject": "firecracker",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "firecracker",
+    "key": "🧨",
+    "subject": "firecracker",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "baby-dragon",
+    "key": "🐉",
+    "subject": "baby dragon",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "baby-dragon",
+    "key": "🐉",
+    "subject": "baby dragon",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "comet",
+    "key": "☄️",
+    "subject": "comet",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "comet",
+    "key": "☄️",
+    "subject": "comet",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "cave-hole",
+    "key": "🕳️",
+    "subject": "cave hole",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "oil-lamp",
+    "key": "🪔",
+    "subject": "oil lamp",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "oil-lamp",
+    "key": "🪔",
+    "subject": "oil lamp",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "steam-vent",
+    "key": "♨️",
+    "subject": "steam vent",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "brick",
+    "key": "🧱",
+    "subject": "brick",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "red-gem",
+    "key": "🟥",
+    "subject": "red gem",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "orange-gem",
+    "key": "🟠",
+    "subject": "orange gem",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "dinosaur-bone",
+    "key": "🦴",
+    "subject": "dinosaur bone",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "dinosaur-bone",
+    "key": "🦴",
+    "subject": "dinosaur bone",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "meat",
+    "key": "🥩",
+    "subject": "meat",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "paw-prints",
+    "key": "🐾",
+    "subject": "paw prints",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "red-car",
+    "key": "🚗",
+    "subject": "red car",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "blue-suv",
+    "key": "🚙",
+    "subject": "blue SUV",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "yellow-school-bus",
+    "key": "🚌",
+    "subject": "yellow school bus",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "crane",
+    "key": "🏗️",
+    "subject": "crane",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "road-barrier",
+    "key": "🚧",
+    "subject": "road barrier",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "traffic-light",
+    "key": "🚦",
+    "subject": "traffic light",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "traffic-light",
+    "key": "🚦",
+    "subject": "traffic light",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "highway-road",
+    "key": "🛣️",
+    "subject": "highway road",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "delivery-truck",
+    "key": "🚚",
+    "subject": "delivery truck",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "taxi",
+    "key": "🚕",
+    "subject": "taxi",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "city-skyline",
+    "key": "🏙️",
+    "subject": "city skyline",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "helicopter",
+    "key": "🚁",
+    "subject": "helicopter",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "helicopter",
+    "key": "🚁",
+    "subject": "helicopter",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "auto-rickshaw",
+    "key": "🛺",
+    "subject": "auto rickshaw",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "bicycle",
+    "key": "🚲",
+    "subject": "bicycle",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "bicycle",
+    "key": "🚲",
+    "subject": "bicycle",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "fuel-pump",
+    "key": "⛽",
+    "subject": "fuel pump",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "fuel-pump",
+    "key": "⛽",
+    "subject": "fuel pump",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "bus-stop",
+    "key": "🚏",
+    "subject": "bus stop",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "bus-stop",
+    "key": "🚏",
+    "subject": "bus stop",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "city-at-dusk",
+    "key": "🌆",
+    "subject": "city at dusk",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "city-at-dusk",
+    "key": "🌆",
+    "subject": "city at dusk",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "bullet-train",
+    "key": "🚄",
+    "subject": "bullet train",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "monorail",
+    "key": "🚟",
+    "subject": "monorail",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "smartphone",
+    "key": "📱",
+    "subject": "smartphone",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "smartphone",
+    "key": "📱",
+    "subject": "smartphone",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "blue-diamond",
+    "key": "💠",
+    "subject": "blue diamond",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "globe",
+    "key": "🌐",
+    "subject": "globe",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "train-station",
+    "key": "🚉",
+    "subject": "train station",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "train-station",
+    "key": "🚉",
+    "subject": "train station",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "small-airplane",
+    "key": "🛩️",
+    "subject": "small airplane",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "small-airplane",
+    "key": "🛩️",
+    "subject": "small airplane",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "microscope",
+    "key": "🔬",
+    "subject": "microscope",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "microscope",
+    "key": "🔬",
+    "subject": "microscope",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "test-tube",
+    "key": "🧪",
+    "subject": "test tube",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "test-tube",
+    "key": "🧪",
+    "subject": "test tube",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "firework",
+    "key": "🎆",
+    "subject": "firework",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "firework",
+    "key": "🎆",
+    "subject": "firework",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "snowflake",
+    "key": "❄️",
+    "subject": "snowflake",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "snowflake",
+    "key": "❄️",
+    "subject": "snowflake",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "snowman",
+    "key": "⛄",
+    "subject": "snowman",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "snowman",
+    "key": "⛄",
+    "subject": "snowman",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "penguin",
+    "key": "🐧",
+    "subject": "penguin",
+    "severity": "major",
+    "dim": "",
+    "message": "muddy / desaturated palette"
+  },
+  {
+    "slug": "penguin",
+    "key": "🐧",
+    "subject": "penguin",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "snowy-mountain",
+    "key": "🏔️",
+    "subject": "snowy mountain",
+    "severity": "major",
+    "dim": "",
+    "message": "muddy / desaturated palette"
+  },
+  {
+    "slug": "snowy-mountain",
+    "key": "🏔️",
+    "subject": "snowy mountain",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "skis",
+    "key": "🎿",
+    "subject": "skis",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "skis",
+    "key": "🎿",
+    "subject": "skis",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "ice-cube",
+    "key": "🧊",
+    "subject": "ice cube",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "winter-scarf",
+    "key": "🧣",
+    "subject": "winter scarf",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "sled",
+    "key": "🛷",
+    "subject": "sled",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "snow-cloud",
+    "key": "🌨️",
+    "subject": "snow cloud",
+    "severity": "major",
+    "dim": "",
+    "message": "muddy / desaturated palette"
+  },
+  {
+    "slug": "snow-cloud",
+    "key": "🌨️",
+    "subject": "snow cloud",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "skier",
+    "key": "⛷️",
+    "subject": "skier",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "skier",
+    "key": "⛷️",
+    "subject": "skier",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "snowboarder",
+    "key": "🏂",
+    "subject": "snowboarder",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "snowboarder",
+    "key": "🏂",
+    "subject": "snowboarder",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "winter-mittens",
+    "key": "🧤",
+    "subject": "winter mittens",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "snowman-with-scarf",
+    "key": "☃️",
+    "subject": "snowman with scarf",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "snowman-with-scarf",
+    "key": "☃️",
+    "subject": "snowman with scarf",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "cold-shivering-face",
+    "key": "🥶",
+    "subject": "cold shivering face",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "two-hump-camel",
+    "key": "🐫",
+    "subject": "two-hump camel",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "two-hump-camel",
+    "key": "🐫",
+    "subject": "two-hump camel",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "cactus",
+    "key": "🌵",
+    "subject": "cactus",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "cactus",
+    "key": "🌵",
+    "subject": "cactus",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "scorpion",
+    "key": "🦂",
+    "subject": "scorpion",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "scorpion",
+    "key": "🦂",
+    "subject": "scorpion",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "sandy-desert",
+    "key": "🏜️",
+    "subject": "sandy desert",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "sandy-desert",
+    "key": "🏜️",
+    "subject": "sandy desert",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "clay-pot",
+    "key": "🏺",
+    "subject": "clay pot",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "camel",
+    "key": "🐪",
+    "subject": "camel",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "camel",
+    "key": "🐪",
+    "subject": "camel",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "worm",
+    "key": "🪱",
+    "subject": "worm",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "worm",
+    "key": "🪱",
+    "subject": "worm",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "camping-tent",
+    "key": "⛺",
+    "subject": "camping tent",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "fairytale-castle",
+    "key": "🏰",
+    "subject": "fairytale castle",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "fairytale-castle",
+    "key": "🏰",
+    "subject": "fairytale castle",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "friendly-wizard",
+    "key": "🧙",
+    "subject": "friendly wizard",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "friendly-wizard",
+    "key": "🧙",
+    "subject": "friendly wizard",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "sparkles",
+    "key": "✨",
+    "subject": "sparkles",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "sparkles",
+    "key": "✨",
+    "subject": "sparkles",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "crystal-ball",
+    "key": "🔮",
+    "subject": "crystal ball",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "shield",
+    "key": "🛡️",
+    "subject": "shield",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "swirl-of-sparkle-stars",
+    "key": "💫",
+    "subject": "swirl of sparkle stars",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "swirl-of-sparkle-stars",
+    "key": "💫",
+    "subject": "swirl of sparkle stars",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "carousel-horse",
+    "key": "🎠",
+    "subject": "carousel horse",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "carousel-horse",
+    "key": "🎠",
+    "subject": "carousel horse",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "glowing-star",
+    "key": "🌟",
+    "subject": "glowing star",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "rocket-ship",
+    "key": "🚀",
+    "subject": "rocket ship",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "rocket-ship",
+    "key": "🚀",
+    "subject": "rocket ship",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "satellite",
+    "key": "🛰️",
+    "subject": "satellite",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "astronaut",
+    "key": "👨‍🚀",
+    "subject": "astronaut",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "astronaut",
+    "key": "👨‍🚀",
+    "subject": "astronaut",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "planet-earth",
+    "key": "🌍",
+    "subject": "planet Earth",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "ringed-planet-saturn",
+    "key": "🪐",
+    "subject": "ringed planet Saturn",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "yellow-star",
+    "key": "⭐",
+    "subject": "yellow star",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "flying-saucer-ufo",
+    "key": "🛸",
+    "subject": "flying saucer UFO",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "flying-saucer-ufo",
+    "key": "🛸",
+    "subject": "flying saucer UFO",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "friendly-green-alien",
+    "key": "👽",
+    "subject": "friendly green alien",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "friendly-green-alien",
+    "key": "👽",
+    "subject": "friendly green alien",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "shooting-star",
+    "key": "🌠",
+    "subject": "shooting star",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "shooting-star",
+    "key": "🌠",
+    "subject": "shooting star",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "starry-galaxy",
+    "key": "🌌",
+    "subject": "starry galaxy",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "dark-planet",
+    "key": "🌑",
+    "subject": "dark planet",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "new-moon-face",
+    "key": "🌚",
+    "subject": "new moon face",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "new-moon-face",
+    "key": "🌚",
+    "subject": "new moon face",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "full-moon",
+    "key": "🌕",
+    "subject": "full moon",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "space-invader-alien",
+    "key": "👾",
+    "subject": "space invader alien",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "space-invader-alien",
+    "key": "👾",
+    "subject": "space invader alien",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "flashlight",
+    "key": "🔦",
+    "subject": "flashlight",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "flashlight",
+    "key": "🔦",
+    "subject": "flashlight",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "red-planet-mars",
+    "key": "🔴",
+    "subject": "red planet Mars",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "crescent-moon-face",
+    "key": "🌛",
+    "subject": "crescent moon face",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "rainbow",
+    "key": "🌈",
+    "subject": "rainbow",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "metal-gear",
+    "key": "⚙️",
+    "subject": "metal gear",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "metal-gear",
+    "key": "⚙️",
+    "subject": "metal gear",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "nut-and-bolt",
+    "key": "🔩",
+    "subject": "nut and bolt",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "nut-and-bolt",
+    "key": "🔩",
+    "subject": "nut and bolt",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "wrench",
+    "key": "🔧",
+    "subject": "wrench",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "wrench",
+    "key": "🔧",
+    "subject": "wrench",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "light-bulb",
+    "key": "💡",
+    "subject": "light bulb",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "battery",
+    "key": "🔋",
+    "subject": "battery",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "hammer-and-wrench",
+    "key": "🛠️",
+    "subject": "hammer and wrench",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "hammer-and-wrench",
+    "key": "🛠️",
+    "subject": "hammer and wrench",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "satellite-dish",
+    "key": "📡",
+    "subject": "satellite dish",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "satellite-dish",
+    "key": "📡",
+    "subject": "satellite dish",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "computer-monitor",
+    "key": "🖥️",
+    "subject": "computer monitor",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "joystick",
+    "key": "🕹️",
+    "subject": "joystick",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "magnet",
+    "key": "🧲",
+    "subject": "magnet",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "factory",
+    "key": "🏭",
+    "subject": "factory",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "floppy-disk",
+    "key": "💾",
+    "subject": "floppy disk",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "pager",
+    "key": "📟",
+    "subject": "pager",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "alarm-clock",
+    "key": "⏰",
+    "subject": "alarm clock",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "mantel-clock",
+    "key": "🕰️",
+    "subject": "mantel clock",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "hourglass",
+    "key": "⌛",
+    "subject": "hourglass",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "swirling-portal",
+    "key": "🌀",
+    "subject": "swirling portal",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "ancient-scroll",
+    "key": "📜",
+    "subject": "ancient scroll",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "stone-head-statue",
+    "key": "🗿",
+    "subject": "stone head statue",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "magician-top-hat",
+    "key": "🎩",
+    "subject": "magician top hat",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "red-apple",
+    "key": "🍎",
+    "subject": "red apple",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "bunch-of-purple-grapes",
+    "key": "🍇",
+    "subject": "bunch of purple grapes",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "bunch-of-purple-grapes",
+    "key": "🍇",
+    "subject": "bunch of purple grapes",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "watermelon-slice",
+    "key": "🍉",
+    "subject": "watermelon slice",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "strawberry",
+    "key": "🍓",
+    "subject": "strawberry",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "peach",
+    "key": "🍑",
+    "subject": "peach",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "peach",
+    "key": "🍑",
+    "subject": "peach",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "kiwi-slice",
+    "key": "🥝",
+    "subject": "kiwi slice",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "kiwi-slice",
+    "key": "🥝",
+    "subject": "kiwi slice",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "wrapped-gift-box",
+    "key": "🎁",
+    "subject": "wrapped gift box",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "soccer-ball",
+    "key": "⚽",
+    "subject": "soccer ball",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "party-popper",
+    "key": "🎉",
+    "subject": "party popper",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "party-popper",
+    "key": "🎉",
+    "subject": "party popper",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "confetti-ball",
+    "key": "🎊",
+    "subject": "confetti ball",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "confetti-ball",
+    "key": "🎊",
+    "subject": "confetti ball",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "donut",
+    "key": "🍩",
+    "subject": "donut",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "wrapped-candy",
+    "key": "🍬",
+    "subject": "wrapped candy",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "puppy-dog",
+    "key": "🐶",
+    "subject": "puppy dog",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "puppy-dog",
+    "key": "🐶",
+    "subject": "puppy dog",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "kitten",
+    "key": "🐱",
+    "subject": "kitten",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "kitten",
+    "key": "🐱",
+    "subject": "kitten",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "lion-cub",
+    "key": "🦁",
+    "subject": "lion cub",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "lion-cub",
+    "key": "🦁",
+    "subject": "lion cub",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "happy-pig-face",
+    "key": "🐷",
+    "subject": "happy pig face",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "happy-pig-face",
+    "key": "🐷",
+    "subject": "happy pig face",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "monkey-face",
+    "key": "🐵",
+    "subject": "monkey face",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "ladybug",
+    "key": "🐞",
+    "subject": "ladybug",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "trumpet",
+    "key": "🎺",
+    "subject": "trumpet",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "trumpet",
+    "key": "🎺",
+    "subject": "trumpet",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "stack-of-books",
+    "key": "📚",
+    "subject": "stack of books",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "pencil",
+    "key": "✏️",
+    "subject": "pencil",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "pencil",
+    "key": "✏️",
+    "subject": "pencil",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "gold-trophy-cup",
+    "key": "🏆",
+    "subject": "gold trophy cup",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "gold-trophy-cup",
+    "key": "🏆",
+    "subject": "gold trophy cup",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "gold-medal",
+    "key": "🥇",
+    "subject": "gold medal",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "gold-medal",
+    "key": "🥇",
+    "subject": "gold medal",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "silver-medal",
+    "key": "🥈",
+    "subject": "silver medal",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "silver-medal",
+    "key": "🥈",
+    "subject": "silver medal",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "bronze-medal",
+    "key": "🥉",
+    "subject": "bronze medal",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "jigsaw-puzzle-piece",
+    "key": "🧩",
+    "subject": "jigsaw puzzle piece",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "open-storybook",
+    "key": "📖",
+    "subject": "open storybook",
+    "severity": "major",
+    "dim": "",
+    "message": "weak / noisy silhouette (not a bold rounded toy)"
+  },
+  {
+    "slug": "open-storybook",
+    "key": "📖",
+    "subject": "open storybook",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "fluffy-white-cloud",
+    "key": "☁️",
+    "subject": "fluffy white cloud",
+    "severity": "major",
+    "dim": "",
+    "message": "muddy / desaturated palette"
+  },
+  {
+    "slug": "fluffy-white-cloud",
+    "key": "☁️",
+    "subject": "fluffy white cloud",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "swirly-lollipop",
+    "key": "🍭",
+    "subject": "swirly lollipop",
+    "severity": "major",
+    "dim": "",
+    "message": "blurry / soft focus"
+  },
+  {
+    "slug": "brave-baby-tiger-cub",
+    "key": "🐯",
+    "subject": "brave baby tiger cub",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "happy-baby-panda",
+    "key": "🐼",
+    "subject": "happy baby panda",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "cute-little-fox",
+    "key": "🦊",
+    "subject": "cute little fox",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "friendly-baby-elephant",
+    "key": "🐘",
+    "subject": "friendly baby elephant",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "cute-green-baby-dinosaur",
+    "key": "🦕",
+    "subject": "cute green baby dinosaur",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "cute-baby-dragon",
+    "key": "🐲",
+    "subject": "cute baby dragon",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "cute-friendly-robot-buddy",
+    "key": "🤖",
+    "subject": "cute friendly robot buddy",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "colorful-pirate-parrot",
+    "key": "🦜",
+    "subject": "colorful pirate parrot",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "cuddly-teddy-bear",
+    "key": "🧸",
+    "subject": "cuddly teddy bear",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "baby-milk-bottle",
+    "key": "🍼",
+    "subject": "baby milk bottle",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "cozy-bed",
+    "key": "🛏️",
+    "subject": "cozy bed",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "wooden-chair",
+    "key": "🪑",
+    "subject": "wooden chair",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "lit-candle",
+    "key": "🕯️",
+    "subject": "lit candle",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "pair-of-socks",
+    "key": "🧦",
+    "subject": "pair of socks",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "t-shirt",
+    "key": "👕",
+    "subject": "t-shirt",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "spoon",
+    "key": "🥄",
+    "subject": "spoon",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "plate-with-fork-and-knife",
+    "key": "🍽️",
+    "subject": "plate with fork and knife",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "broom",
+    "key": "🧹",
+    "subject": "broom",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "toothbrush",
+    "key": "🪥",
+    "subject": "toothbrush",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "television",
+    "key": "📺",
+    "subject": "television",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "golden-key",
+    "key": "🔑",
+    "subject": "golden key",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "yo-yo",
+    "key": "🪀",
+    "subject": "yo-yo",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "spool-of-thread",
+    "key": "🧵",
+    "subject": "spool of thread",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "red-party-balloon",
+    "key": "🎈",
+    "subject": "red party balloon",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "cozy-little-house",
+    "key": "🏠",
+    "subject": "cozy little house",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "wise-little-owl",
+    "key": "🦉",
+    "subject": "wise little owl",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "friendly-brown-bear",
+    "key": "🐻",
+    "subject": "friendly brown bear",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "gentle-deer",
+    "key": "🦌",
+    "subject": "gentle deer",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "cute-squirrel",
+    "key": "🐿️",
+    "subject": "cute squirrel",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "red-spotted-mushroom",
+    "key": "🍄",
+    "subject": "red spotted mushroom",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "pine-tree",
+    "key": "🌲",
+    "subject": "pine tree",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "friendly-grey-wolf",
+    "key": "🐺",
+    "subject": "friendly grey wolf",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "cute-hedgehog",
+    "key": "🦔",
+    "subject": "cute hedgehog",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "bird-s-nest-with-eggs",
+    "key": "🪺",
+    "subject": "bird's nest with eggs",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "green-caterpillar",
+    "key": "🐛",
+    "subject": "green caterpillar",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "autumn-leaves",
+    "key": "🍂",
+    "subject": "autumn leaves",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "little-songbird",
+    "key": "🐦",
+    "subject": "little songbird",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "cute-bat",
+    "key": "🦇",
+    "subject": "cute bat",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "acorn",
+    "key": "🌰",
+    "subject": "acorn",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "ant",
+    "key": "🐜",
+    "subject": "ant",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "big-leafy-tree",
+    "key": "🌳",
+    "subject": "big leafy tree",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "cherry-blossom-flower",
+    "key": "🌸",
+    "subject": "cherry blossom flower",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "hibiscus-flower",
+    "key": "🌺",
+    "subject": "hibiscus flower",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "green-leafy-sprig",
+    "key": "🌿",
+    "subject": "green leafy sprig",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "friendly-moose",
+    "key": "🫎",
+    "subject": "friendly moose",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "white-bunny-rabbit",
+    "key": "🐇",
+    "subject": "white bunny rabbit",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "crescent-moon",
+    "key": "🌙",
+    "subject": "crescent moon",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "cute-snail",
+    "key": "🐌",
+    "subject": "cute snail",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "happy-honeybee",
+    "key": "🐝",
+    "subject": "happy honeybee",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "colorful-butterfly",
+    "key": "🦋",
+    "subject": "colorful butterfly",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "tiny-fairy",
+    "key": "🧚",
+    "subject": "tiny fairy",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "magic-wand",
+    "key": "🪄",
+    "subject": "magic wand",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "wheat-stalk",
+    "key": "🌾",
+    "subject": "wheat stalk",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "spotted-cow",
+    "key": "🐄",
+    "subject": "spotted cow",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "hen",
+    "key": "🐔",
+    "subject": "hen",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "pink-pig",
+    "key": "🐖",
+    "subject": "pink pig",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "fluffy-sheep",
+    "key": "🐑",
+    "subject": "fluffy sheep",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "red-tractor",
+    "key": "🚜",
+    "subject": "red tractor",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "sunflower",
+    "key": "🌻",
+    "subject": "sunflower",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "carrot",
+    "key": "🥕",
+    "subject": "carrot",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "corn-cob",
+    "key": "🌽",
+    "subject": "corn cob",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "brown-pony",
+    "key": "🐴",
+    "subject": "brown pony",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "rooster",
+    "key": "🐓",
+    "subject": "rooster",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "egg",
+    "key": "🥚",
+    "subject": "egg",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "tomato",
+    "key": "🍅",
+    "subject": "tomato",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "goat",
+    "key": "🐐",
+    "subject": "goat",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "picnic-basket",
+    "key": "🧺",
+    "subject": "picnic basket",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "green-frog",
+    "key": "🐸",
+    "subject": "green frog",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "yellow-duckling",
+    "key": "🦆",
+    "subject": "yellow duckling",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "orange-fish",
+    "key": "🐟",
+    "subject": "orange fish",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "canoe",
+    "key": "🛶",
+    "subject": "canoe",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "wooden-log",
+    "key": "🪵",
+    "subject": "wooden log",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "sea-turtle",
+    "key": "🐢",
+    "subject": "sea turtle",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "beaver",
+    "key": "🦫",
+    "subject": "beaver",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "water-droplet",
+    "key": "💧",
+    "subject": "water droplet",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "fishing-rod",
+    "key": "🎣",
+    "subject": "fishing rod",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "suspension-bridge",
+    "key": "🌉",
+    "subject": "suspension bridge",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "graceful-swan",
+    "key": "🦢",
+    "subject": "graceful swan",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "grey-rock",
+    "key": "🪨",
+    "subject": "grey rock",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "friendly-crocodile",
+    "key": "🐊",
+    "subject": "friendly crocodile",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "coconut",
+    "key": "🥥",
+    "subject": "coconut",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "playful-monkey",
+    "key": "🐒",
+    "subject": "playful monkey",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "palm-tree",
+    "key": "🌴",
+    "subject": "palm tree",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "pineapple",
+    "key": "🍍",
+    "subject": "pineapple",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "green-lizard",
+    "key": "🦎",
+    "subject": "green lizard",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "sandy-beach-with-umbrella",
+    "key": "🏖️",
+    "subject": "sandy beach with umbrella",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "spiral-seashell",
+    "key": "🐚",
+    "subject": "spiral seashell",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "pink-flamingo",
+    "key": "🦩",
+    "subject": "pink flamingo",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "banana",
+    "key": "🍌",
+    "subject": "banana",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "peacock",
+    "key": "🦚",
+    "subject": "peacock",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "tropical-fish",
+    "key": "🐠",
+    "subject": "tropical fish",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "mango",
+    "key": "🥭",
+    "subject": "mango",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "sleepy-sloth",
+    "key": "🦥",
+    "subject": "sleepy sloth",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "surfer-on-a-wave",
+    "key": "🏄",
+    "subject": "surfer on a wave",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "ocean-wave",
+    "key": "🌊",
+    "subject": "ocean wave",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "beach-umbrella",
+    "key": "⛱️",
+    "subject": "beach umbrella",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "volleyball",
+    "key": "🏐",
+    "subject": "volleyball",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "flip-flop-sandal",
+    "key": "🩴",
+    "subject": "flip-flop sandal",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "ice-cream-cone",
+    "key": "🍦",
+    "subject": "ice cream cone",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "kite",
+    "key": "🪁",
+    "subject": "kite",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "pufferfish",
+    "key": "🐡",
+    "subject": "pufferfish",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "sunscreen-bottle",
+    "key": "🧴",
+    "subject": "sunscreen bottle",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "coral",
+    "key": "🪸",
+    "subject": "coral",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "sunrise-over-the-sea",
+    "key": "🌅",
+    "subject": "sunrise over the sea",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "friendly-dolphin",
+    "key": "🐬",
+    "subject": "friendly dolphin",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "blue-whale",
+    "key": "🐳",
+    "subject": "blue whale",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "friendly-shark",
+    "key": "🦈",
+    "subject": "friendly shark",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "baby-octopus",
+    "key": "🐙",
+    "subject": "baby octopus",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "red-crab",
+    "key": "🦀",
+    "subject": "red crab",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "lobster",
+    "key": "🦞",
+    "subject": "lobster",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "squid",
+    "key": "🦑",
+    "subject": "squid",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "cute-seal",
+    "key": "🦭",
+    "subject": "cute seal",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "bubbles",
+    "key": "🫧",
+    "subject": "bubbles",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "ship-anchor",
+    "key": "⚓",
+    "subject": "ship anchor",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "pirate-flag",
+    "key": "🏴‍☠️",
+    "subject": "pirate flag",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "treasure-map",
+    "key": "🗺️",
+    "subject": "treasure map",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "bag-of-gold-coins",
+    "key": "💰",
+    "subject": "bag of gold coins",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "sailboat",
+    "key": "⛵",
+    "subject": "sailboat",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "telescope",
+    "key": "🔭",
+    "subject": "telescope",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "sparkling-gem",
+    "key": "💎",
+    "subject": "sparkling gem",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "gold-coin",
+    "key": "🪙",
+    "subject": "gold coin",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "desert-island",
+    "key": "🏝️",
+    "subject": "desert island",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "old-treasure-key",
+    "key": "🗝️",
+    "subject": "old treasure key",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "crossed-swords",
+    "key": "⚔️",
+    "subject": "crossed swords",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "compass",
+    "key": "🧭",
+    "subject": "compass",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "golden-crown",
+    "key": "👑",
+    "subject": "golden crown",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "sword",
+    "key": "🗡️",
+    "subject": "sword",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "erupting-volcano",
+    "key": "🌋",
+    "subject": "erupting volcano",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "flame",
+    "key": "🔥",
+    "subject": "flame",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "burst",
+    "key": "💥",
+    "subject": "burst",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "friendly-t-rex",
+    "key": "🦖",
+    "subject": "friendly T-Rex",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "thermometer",
+    "key": "🌡️",
+    "subject": "thermometer",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "rocky-mountain",
+    "key": "⛰️",
+    "subject": "rocky mountain",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "firecracker",
+    "key": "🧨",
+    "subject": "firecracker",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "baby-dragon",
+    "key": "🐉",
+    "subject": "baby dragon",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "comet",
+    "key": "☄️",
+    "subject": "comet",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "cave-hole",
+    "key": "🕳️",
+    "subject": "cave hole",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "oil-lamp",
+    "key": "🪔",
+    "subject": "oil lamp",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "steam-vent",
+    "key": "♨️",
+    "subject": "steam vent",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "brick",
+    "key": "🧱",
+    "subject": "brick",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "red-gem",
+    "key": "🟥",
+    "subject": "red gem",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "orange-gem",
+    "key": "🟠",
+    "subject": "orange gem",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "dinosaur-bone",
+    "key": "🦴",
+    "subject": "dinosaur bone",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "meat",
+    "key": "🥩",
+    "subject": "meat",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "paw-prints",
+    "key": "🐾",
+    "subject": "paw prints",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "red-car",
+    "key": "🚗",
+    "subject": "red car",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "blue-suv",
+    "key": "🚙",
+    "subject": "blue SUV",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "yellow-school-bus",
+    "key": "🚌",
+    "subject": "yellow school bus",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "crane",
+    "key": "🏗️",
+    "subject": "crane",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "road-barrier",
+    "key": "🚧",
+    "subject": "road barrier",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "traffic-light",
+    "key": "🚦",
+    "subject": "traffic light",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "highway-road",
+    "key": "🛣️",
+    "subject": "highway road",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "delivery-truck",
+    "key": "🚚",
+    "subject": "delivery truck",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "taxi",
+    "key": "🚕",
+    "subject": "taxi",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "city-skyline",
+    "key": "🏙️",
+    "subject": "city skyline",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "helicopter",
+    "key": "🚁",
+    "subject": "helicopter",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "auto-rickshaw",
+    "key": "🛺",
+    "subject": "auto rickshaw",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "bicycle",
+    "key": "🚲",
+    "subject": "bicycle",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "fuel-pump",
+    "key": "⛽",
+    "subject": "fuel pump",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "bus-stop",
+    "key": "🚏",
+    "subject": "bus stop",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "city-at-dusk",
+    "key": "🌆",
+    "subject": "city at dusk",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "bullet-train",
+    "key": "🚄",
+    "subject": "bullet train",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "monorail",
+    "key": "🚟",
+    "subject": "monorail",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "smartphone",
+    "key": "📱",
+    "subject": "smartphone",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "blue-diamond",
+    "key": "💠",
+    "subject": "blue diamond",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "globe",
+    "key": "🌐",
+    "subject": "globe",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "train-station",
+    "key": "🚉",
+    "subject": "train station",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "small-airplane",
+    "key": "🛩️",
+    "subject": "small airplane",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "microscope",
+    "key": "🔬",
+    "subject": "microscope",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "test-tube",
+    "key": "🧪",
+    "subject": "test tube",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "firework",
+    "key": "🎆",
+    "subject": "firework",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "snowflake",
+    "key": "❄️",
+    "subject": "snowflake",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "snowman",
+    "key": "⛄",
+    "subject": "snowman",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "penguin",
+    "key": "🐧",
+    "subject": "penguin",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "snowy-mountain",
+    "key": "🏔️",
+    "subject": "snowy mountain",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "skis",
+    "key": "🎿",
+    "subject": "skis",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "ice-cube",
+    "key": "🧊",
+    "subject": "ice cube",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "polar-bear",
+    "key": "🐻‍❄️",
+    "subject": "polar bear",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "winter-scarf",
+    "key": "🧣",
+    "subject": "winter scarf",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "sled",
+    "key": "🛷",
+    "subject": "sled",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "snow-cloud",
+    "key": "🌨️",
+    "subject": "snow cloud",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "skier",
+    "key": "⛷️",
+    "subject": "skier",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "snowboarder",
+    "key": "🏂",
+    "subject": "snowboarder",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "winter-mittens",
+    "key": "🧤",
+    "subject": "winter mittens",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "snowman-with-scarf",
+    "key": "☃️",
+    "subject": "snowman with scarf",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "cold-shivering-face",
+    "key": "🥶",
+    "subject": "cold shivering face",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "two-hump-camel",
+    "key": "🐫",
+    "subject": "two-hump camel",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "cactus",
+    "key": "🌵",
+    "subject": "cactus",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "bright-sun",
+    "key": "☀️",
+    "subject": "bright sun",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "scorpion",
+    "key": "🦂",
+    "subject": "scorpion",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "sandy-desert",
+    "key": "🏜️",
+    "subject": "sandy desert",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "friendly-snake",
+    "key": "🐍",
+    "subject": "friendly snake",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "clay-pot",
+    "key": "🏺",
+    "subject": "clay pot",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "camel",
+    "key": "🐪",
+    "subject": "camel",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "worm",
+    "key": "🪱",
+    "subject": "worm",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "camping-tent",
+    "key": "⛺",
+    "subject": "camping tent",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "fairytale-castle",
+    "key": "🏰",
+    "subject": "fairytale castle",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "friendly-wizard",
+    "key": "🧙",
+    "subject": "friendly wizard",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "magical-unicorn",
+    "key": "🦄",
+    "subject": "magical unicorn",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "sparkles",
+    "key": "✨",
+    "subject": "sparkles",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "crystal-ball",
+    "key": "🔮",
+    "subject": "crystal ball",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "shield",
+    "key": "🛡️",
+    "subject": "shield",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "swirl-of-sparkle-stars",
+    "key": "💫",
+    "subject": "swirl of sparkle stars",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "carousel-horse",
+    "key": "🎠",
+    "subject": "carousel horse",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "glowing-star",
+    "key": "🌟",
+    "subject": "glowing star",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "rocket-ship",
+    "key": "🚀",
+    "subject": "rocket ship",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "satellite",
+    "key": "🛰️",
+    "subject": "satellite",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "astronaut",
+    "key": "👨‍🚀",
+    "subject": "astronaut",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "planet-earth",
+    "key": "🌍",
+    "subject": "planet Earth",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "ringed-planet-saturn",
+    "key": "🪐",
+    "subject": "ringed planet Saturn",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "yellow-star",
+    "key": "⭐",
+    "subject": "yellow star",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "flying-saucer-ufo",
+    "key": "🛸",
+    "subject": "flying saucer UFO",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "friendly-green-alien",
+    "key": "👽",
+    "subject": "friendly green alien",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "shooting-star",
+    "key": "🌠",
+    "subject": "shooting star",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "starry-galaxy",
+    "key": "🌌",
+    "subject": "starry galaxy",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "dark-planet",
+    "key": "🌑",
+    "subject": "dark planet",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "new-moon-face",
+    "key": "🌚",
+    "subject": "new moon face",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "full-moon",
+    "key": "🌕",
+    "subject": "full moon",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "space-invader-alien",
+    "key": "👾",
+    "subject": "space invader alien",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "flashlight",
+    "key": "🔦",
+    "subject": "flashlight",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "red-planet-mars",
+    "key": "🔴",
+    "subject": "red planet Mars",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "crescent-moon-face",
+    "key": "🌛",
+    "subject": "crescent moon face",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "rainbow",
+    "key": "🌈",
+    "subject": "rainbow",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "metal-gear",
+    "key": "⚙️",
+    "subject": "metal gear",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "nut-and-bolt",
+    "key": "🔩",
+    "subject": "nut and bolt",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "wrench",
+    "key": "🔧",
+    "subject": "wrench",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "light-bulb",
+    "key": "💡",
+    "subject": "light bulb",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "battery",
+    "key": "🔋",
+    "subject": "battery",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "hammer-and-wrench",
+    "key": "🛠️",
+    "subject": "hammer and wrench",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "satellite-dish",
+    "key": "📡",
+    "subject": "satellite dish",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "computer-monitor",
+    "key": "🖥️",
+    "subject": "computer monitor",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "joystick",
+    "key": "🕹️",
+    "subject": "joystick",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "power-plug",
+    "key": "🔌",
+    "subject": "power plug",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "magnet",
+    "key": "🧲",
+    "subject": "magnet",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "factory",
+    "key": "🏭",
+    "subject": "factory",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "floppy-disk",
+    "key": "💾",
+    "subject": "floppy disk",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "pager",
+    "key": "📟",
+    "subject": "pager",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "alarm-clock",
+    "key": "⏰",
+    "subject": "alarm clock",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "mantel-clock",
+    "key": "🕰️",
+    "subject": "mantel clock",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "hourglass",
+    "key": "⌛",
+    "subject": "hourglass",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "swirling-portal",
+    "key": "🌀",
+    "subject": "swirling portal",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "ancient-scroll",
+    "key": "📜",
+    "subject": "ancient scroll",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "stone-head-statue",
+    "key": "🗿",
+    "subject": "stone head statue",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "magician-top-hat",
+    "key": "🎩",
+    "subject": "magician top hat",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "red-apple",
+    "key": "🍎",
+    "subject": "red apple",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "bunch-of-purple-grapes",
+    "key": "🍇",
+    "subject": "bunch of purple grapes",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "watermelon-slice",
+    "key": "🍉",
+    "subject": "watermelon slice",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "strawberry",
+    "key": "🍓",
+    "subject": "strawberry",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "peach",
+    "key": "🍑",
+    "subject": "peach",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "kiwi-slice",
+    "key": "🥝",
+    "subject": "kiwi slice",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "wrapped-gift-box",
+    "key": "🎁",
+    "subject": "wrapped gift box",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "soccer-ball",
+    "key": "⚽",
+    "subject": "soccer ball",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "party-popper",
+    "key": "🎉",
+    "subject": "party popper",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "confetti-ball",
+    "key": "🎊",
+    "subject": "confetti ball",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "donut",
+    "key": "🍩",
+    "subject": "donut",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "wrapped-candy",
+    "key": "🍬",
+    "subject": "wrapped candy",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "puppy-dog",
+    "key": "🐶",
+    "subject": "puppy dog",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "kitten",
+    "key": "🐱",
+    "subject": "kitten",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "lion-cub",
+    "key": "🦁",
+    "subject": "lion cub",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "happy-pig-face",
+    "key": "🐷",
+    "subject": "happy pig face",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "monkey-face",
+    "key": "🐵",
+    "subject": "monkey face",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "ladybug",
+    "key": "🐞",
+    "subject": "ladybug",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "trumpet",
+    "key": "🎺",
+    "subject": "trumpet",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "stack-of-books",
+    "key": "📚",
+    "subject": "stack of books",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "pencil",
+    "key": "✏️",
+    "subject": "pencil",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "gold-trophy-cup",
+    "key": "🏆",
+    "subject": "gold trophy cup",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "gold-medal",
+    "key": "🥇",
+    "subject": "gold medal",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "silver-medal",
+    "key": "🥈",
+    "subject": "silver medal",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "bronze-medal",
+    "key": "🥉",
+    "subject": "bronze medal",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "jigsaw-puzzle-piece",
+    "key": "🧩",
+    "subject": "jigsaw puzzle piece",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "open-storybook",
+    "key": "📖",
+    "subject": "open storybook",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "fluffy-white-cloud",
+    "key": "☁️",
+    "subject": "fluffy white cloud",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  },
+  {
+    "slug": "swirly-lollipop",
+    "key": "🍭",
+    "subject": "swirly lollipop",
+    "severity": "review",
+    "dim": "vision",
+    "message": "recognizability/anatomy not machine-verifiable — needs human or vision-model sign-off"
+  }
+]

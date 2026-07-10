@@ -1,0 +1,15 @@
+{
+  "name": "Brain Booster Kids",
+  "short_name": "BrainBooster",
+  "description": "Joyful brain games for ages 4-12: memory, logic, math, language and more.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f2f0fa",
+  "theme_color": "#7a5cc8",
+  "orientation": "portrait",
+  "icons": [
+    { "src": "etricks-logo.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "etricks-logo.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" },
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}
