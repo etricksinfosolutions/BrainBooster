@@ -12,7 +12,7 @@ import { describe, it, expect } from 'vitest'
 import {
   dirFromDelta, neighborInDirection, areAdjacent,
   freshBoard, resolveSwap, findMatches, hasLegalMove,
-} from '../activities/match3'
+} from '@etricks/activity-match3'
 
 describe('Gesture direction detection (forgiving, dominant-axis)', () => {
   it('maps a swipe delta to the right direction', () => {

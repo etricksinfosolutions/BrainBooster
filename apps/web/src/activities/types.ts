@@ -18,19 +18,24 @@ export type Mechanic =
   | 'memory-flip'     // flip & match pairs
   | 'memory-sequence' // watch & repeat (Simon)
   | 'spell'           // drag letters into place
-  | 'story'           // read & comprehend
+  | 'fillcolor'       // colour-by-number: fill each square with its matching colour
   | 'quick-tap'       // tap the right moving things against the clock
   | 'sorting'         // drag/tap items into the right buckets
   | 'match3'          // swap to line up 3+ on an educational board
   | 'maze'            // navigate a character to the goal
   | 'find-difference' // spot what changed between two scenes
   | 'sliding'         // slide tiles into the solved order
+  | 'reflex'          // fast reflex/speed mini-games (tap, reaction, balloon…)
+  | 'recall'          // show-then-recall memory games (number, word, position…)
+  | 'arithmetic'      // fast mental-math games (add, sub, mul, div, race)
+  | 'logicgrid'       // procedural logic puzzles (pyramid, pattern, deduce…)
 
 /** Every mechanic that has a renderer. Anything else must NEVER be scheduled
  *  (it would have no component and render a blank screen). */
 export const MECHANICS: Mechanic[] = [
-  'quiz', 'memory-flip', 'memory-sequence', 'spell', 'story', 'quick-tap',
+  'quiz', 'memory-flip', 'memory-sequence', 'spell', 'fillcolor', 'quick-tap',
   'sorting', 'match3', 'maze', 'find-difference', 'sliding',
+  'reflex', 'recall', 'arithmetic', 'logicgrid',
 ]
 export const isMechanic = (m: unknown): m is Mechanic => typeof m === 'string' && (MECHANICS as string[]).includes(m)
 

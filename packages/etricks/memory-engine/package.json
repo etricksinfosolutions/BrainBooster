@@ -1,0 +1,31 @@
+{
+  "name": "@etricks/memory-engine",
+  "version": "0.0.1",
+  "private": true,
+  "description": "A reusable memory (concentration) game system: humans built it once, AIOS manufactures its themed image-pair packs. The second engine — proves the engine + content abstraction generalises beyond text.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "tsx --test src/**/*.test.ts",
+    "clean": "rimraf dist .turbo"
+  },
+  "dependencies": {
+    "@etricks/contracts": "workspace:*",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "rimraf": "^6.0.1",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}

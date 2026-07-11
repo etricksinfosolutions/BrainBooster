@@ -9,6 +9,17 @@
     <link rel="icon" href="./icon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="./etricks-logo.png" />
     <title>Brain Booster Kids — by EtricksGames</title>
+    <script>
+      // This root app IS the Brain Booster build. If a different game is
+      // requested via ?game=, hand off to the generic per-game player so
+      // /?game=<id> links "just work" instead of silently showing Brain Booster.
+      (function () {
+        var g = new URLSearchParams(location.search).get('game');
+        if (g && g !== 'brain-booster') {
+          location.replace('/play.html' + location.search);
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

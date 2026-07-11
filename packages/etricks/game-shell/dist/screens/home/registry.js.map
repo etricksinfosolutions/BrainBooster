@@ -1,0 +1,1 @@
+{"version":3,"file":"registry.js","sourceRoot":"","sources":["../../../src/screens/home/registry.ts"],"names":[],"mappings":"AACA,OAAO,EAAE,UAAU,EAAE,MAAM,iBAAiB,CAAC;AAC7C,OAAO,EAAE,aAAa,EAAE,MAAM,oBAAoB,CAAC;AACnD,OAAO,EAAE,YAAY,EAAE,MAAM,mBAAmB,CAAC;AAEjD;;;GAGG;AACH,MAAM,CAAC,MAAM,WAAW,GAAmB;IACzC,IAAI,EAAE,UAAU;IAChB,OAAO,EAAE,aAAa;IACtB,MAAM,EAAE,YAAY;CACrB,CAAC"}

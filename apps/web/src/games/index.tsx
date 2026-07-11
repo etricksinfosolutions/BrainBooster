@@ -13,11 +13,12 @@ import { storiesForThemes } from '../data/stories'
 import { themeEmojis, worldForLevel } from '../data/worlds'
 import { themeFor } from '../theme'
 import { buildLevelQuestions, Question, DIFFICULTY_LABELS } from '../data/questions'
-import { sfx, speak, useStore, randomEncourage, HINT_COST } from '../state/store'
+import { sfx, haptics, speak, useStore, randomEncourage, HINT_COST } from '../state/store'
 import { track } from '../analytics'
 import { EmojiImg } from '../components/emoji'
 import { UiIcon } from '../components/art'
 import { Sprite } from '../assets/Sprite'
+import { FillColor } from '../activities/mechanics/fillcolor'   // the Story slot now plays Fill the Colors
 
 /** Game content renderer: every pictorial token becomes a professionally
  *  illustrated sprite from the Asset Engine (never a raw emoji glyph), while
@@ -44,7 +45,7 @@ export const GAME_HEAD: Record<GameKind, { icon: string; title: string }> = {
   'spell': { icon: '🔤', title: 'Fill in the Blanks' },
   'opposites': { icon: '🔄', title: 'Opposite Day' },
   'riddle': { icon: '🤔', title: 'Riddle Time' },
-  'story': { icon: '📖', title: 'Story Time' },
+  'story': { icon: '🎨', title: 'Fill the Colors' },
   'quick-tap': { icon: '🍓', title: 'Fruit Frenzy' },
   'quick-count': { icon: '⭐', title: 'Star Counter' },
 }
@@ -73,7 +74,9 @@ export function useSound() {
   return {
     tap: () => on && sfx.tap(),
     good: () => on && sfx.good(),
-    bad: () => on && sfx.bad(),
+    // A wrong answer fires the invalid tone + a short 30ms buzz together (#7), both
+    // respecting the sound setting so a muted game stays fully silent + still.
+    bad: () => { if (on) { sfx.bad(); haptics.wrong() } },
     say: (t: string) => speak(t, voice),
   }
 }
@@ -242,23 +245,80 @@ function QuestionPrompt({ q }: { q: Question }) {
 
 // --- Unified quiz: SIX questions of increasing difficulty, no repeats (spec #1,#2)
 
+// A tiny seeded PRNG (mulberry32) so a COMPLETED level can regenerate the EXACT
+// same question set every replay — once a child has cleared a level, the content
+// stays familiar. Only the option order changes (reshuffled per play, below).
+function seededRandom(seed: number): () => number {
+  let a = seed >>> 0
+  return () => {
+    a = (a + 0x6d2b79f5) | 0
+    let t = Math.imul(a ^ (a >>> 15), 1 | a)
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296
+  }
+}
+function withSeededRandom<T>(seed: number, fn: () => T): T {
+  const orig = Math.random
+  Math.random = seededRandom(seed || 1)
+  try { return fn() } finally { Math.random = orig }
+}
+/** Randomly reorder a question's options, keeping `answer` pointing at the correct one. */
+function reshuffleOptions(q: Question): Question {
+  if (!q.options || q.options.length < 2) return q
+  const order = q.options.map((_, i) => i)
+  for (let i = order.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1))
+    ;[order[i], order[j]] = [order[j], order[i]]
+  }
+  return { ...q, options: order.map(i => q.options[i]), answer: order.indexOf(q.answer) }
+}
+
+/**
+ * A tiny bridge so the Play screen's bottom Hint button can reveal the CURRENT
+ * question's hint without touching the question, options, or answer (#5, #8). The
+ * active QuestionRunner registers its reveal fn on mount; the bar calls request().
+ */
+export const hintBus: { reveal: (() => void) | null; request: () => void } = {
+  reveal: null,
+  request() { this.reveal?.() },
+}
+
 export function QuestionRunner({ level, onDone, category }: GameProps & { category?: import('../data/questions').QCategory }) {
   const { state } = useStore()
   const s = useSound()
   const seen = useMemo(() => new Set(state.profile.seenQuestions), []) // eslint-disable-line
-  const questions = useMemo(() => buildLevelQuestions(level, seen, category), [level]) // eslint-disable-line
+  // A completed level (already earned stars) keeps its SAME questions on replay —
+  // generated deterministically from the level id — and only reshuffles the option
+  // order. An unfinished level still gets a fresh set each time.
+  const completed = (state.profile.starsByLevel[level.id] ?? 0) > 0
+  const questions = useMemo(() => {
+    if (completed) {
+      const base = withSeededRandom((level.id * 2654435761) >>> 0, () =>
+        buildLevelQuestions(level, new Set<string>(), category))
+      return base.map(reshuffleOptions)
+    }
+    return buildLevelQuestions(level, seen, category)
+  }, [level]) // eslint-disable-line
   const [i, setI] = useState(0)
   const [qAttempts, setQAttempts] = useState(0)
   const [fb, setFb] = useState<{ kind: 'good' | 'bad' | null; text: string }>({ kind: null, text: '' })
   const [locked, setLocked] = useState(false)
   const [wrongIdx, setWrongIdx] = useState<number | null>(null)
   const [pop, setPop] = useState(0)
+  const [showHint, setShowHint] = useState(false)
   const firstCorrect = useRef(0)
   const hintsUsed = useRef(0)
   const answered = useRef<string[]>([])
   const q = questions[i]
 
   useEffect(() => { if (q?.say) s.say(q.say) }, [i]) // eslint-disable-line
+  // Hide any revealed hint when the question changes (#5 — hint never regenerates it).
+  useEffect(() => { setShowHint(false) }, [i])
+  // Register this runner's hint reveal so the bottom-bar Hint button acts on THIS question.
+  useEffect(() => {
+    hintBus.reveal = () => { setShowHint(true); hintsUsed.current++ }
+    return () => { hintBus.reveal = null }
+  }, [])
 
   if (!q) return null
 
@@ -267,6 +327,8 @@ export function QuestionRunner({ level, onDone, category }: GameProps & { catego
     if (idx === q.answer) {
       s.good(); setLocked(true); setWrongIdx(null); setPop(p => p + 1); s.say(randomCelebrate())
       if (qAttempts === 0) firstCorrect.current++
+      // Educational feedback (#6): every question carries a contextual explanation
+      // (attached in buildLevelQuestions). Hold long enough for a child to read it.
       setFb({ kind: 'good', text: q.explain ?? 'Correct! 🎉' })
       setTimeout(() => {
         setFb({ kind: null, text: '' }); setLocked(false)
@@ -274,7 +336,7 @@ export function QuestionRunner({ level, onDone, category }: GameProps & { catego
         if (i + 1 >= questions.length) {
           onDone(firstCorrect.current / questions.length, { hintsUsed: hintsUsed.current, seenIds: answered.current })
         } else { setI(i + 1); setQAttempts(0) }
-      }, 850)
+      }, 1800)
     } else {
       s.bad(); setQAttempts(a => a + 1); setWrongIdx(idx)
       setFb({ kind: 'bad', text: randomEncourage() })
@@ -299,7 +361,11 @@ export function QuestionRunner({ level, onDone, category }: GameProps & { catego
           </button>
         ))}
       </div>
-      <HintBar hint={q.hint} onUsed={() => { hintsUsed.current++ }} />
+      {showHint && (
+        <div className="hint-revealed" role="status">
+          <span className="hint-lamp"><EmojiImg emoji="💡" size={22} /></span> {q.hint}
+        </div>
+      )}
     </div>
   )
 }
@@ -660,7 +726,7 @@ export function QuickTap({ level, onDone }: GameProps) {
       <p className="game-hint">🍓 Tap {target} fruits — avoid everything else! ⏱ {time}s · {hits}/{target}</p>
       <div className="tap-field" role="application" aria-label="tap the fruits">
         {items.map(i => (
-          <button key={i.id} className="tap-item" style={{ left: `${i.x}%`, top: `${i.y}%` }} onClick={() => tap(i.id, i.fruit)}><Gfx v={i.e} size={40} /></button>
+          <button key={i.id} className="tap-item" style={{ left: `${i.x}%`, top: `${i.y}%` }} onClick={() => tap(i.id, i.fruit)}><Gfx v={i.e} size={64} /></button>
         ))}
       </div>
     </div>
@@ -683,7 +749,7 @@ export const GAME_REGISTRY: Record<string, React.ComponentType<GameProps>> = {
   'spell': SpellGame,
   'opposites': QuestionRunner,
   'riddle': QuestionRunner,
-  'story': StoryGame,
+  'story': ({ level, onDone }) => <FillColor level={level} onDone={onDone} />,
   'quick-tap': QuickTap,
   'quick-count': QuestionRunner,
 }

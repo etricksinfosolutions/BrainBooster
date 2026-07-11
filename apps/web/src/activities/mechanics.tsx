@@ -14,11 +14,18 @@ import { themeEmojis } from '../data/worlds'
 import { sfx } from '../state/store'
 import {
   Gfx, GameTitle, useSound, Progress, shuffle,
-  MemoryFlip, MemorySequence, SpellGame, StoryGame, QuickTap, QuestionRunner,
+  MemoryFlip, MemorySequence, SpellGame, QuickTap, QuestionRunner,
 } from '../games'
 import { ActivitySpec, Mechanic } from './types'
-import { freshBoard, resolveSwap, dirFromDelta, neighborInDirection, areAdjacent, Dir } from './match3'
+import { freshBoard, resolveSwap, dirFromDelta, neighborInDirection, areAdjacent, Dir } from '@etricks/activity-match3'
 import { subjectFor } from '../assets/registry'
+// New self-contained mechanic engines — each renders five variants switched on
+// spec.activityId (see the mechanics/ files). They self-size from level.tierIndex.
+import { Reflex } from './mechanics/reflex'
+import { RecallGame } from './mechanics/recall'
+import { ArithmeticGame } from './mechanics/arithmetic'
+import { LogicGridGame } from './mechanics/logicgrid'
+import { FillColor } from './mechanics/fillcolor'
 
 export interface ActivityProps { spec: ActivitySpec; level: LevelDef; onDone: (accuracy: number, meta?: { hintsUsed?: number; seenIds?: string[] }) => void }
 
@@ -393,7 +400,7 @@ export function FindDifferenceGame({ spec, level, onDone }: ActivityProps) {
   const Grid = ({ data }: { data: string[] }) => (
     <div className="diff-grid" style={{ gridTemplateColumns: `repeat(${cols}, 1fr)` }}>
       {data.map((e, i) => (
-        <button key={i} className={`diff-cell ${found.has(i) ? 'is-found' : ''}`} onClick={() => tap(i)}><Gfx v={e} size={30} /></button>
+        <button key={i} className={`diff-cell ${found.has(i) ? 'is-found' : ''}`} onClick={() => tap(i)}><Gfx v={e} fill /></button>
       ))}
     </div>
   )
@@ -483,11 +490,17 @@ export const MECHANIC_REGISTRY: Record<Mechanic, React.ComponentType<ActivityPro
   'memory-flip': ({ spec, level, onDone }) => <MemoryFlip level={sized(level, spec)} onDone={onDone} />,
   'memory-sequence': ({ spec, level, onDone }) => <MemorySequence level={sized(level, spec)} onDone={onDone} />,
   'spell': ({ spec, level, onDone }) => <SpellGame level={sized(level, spec)} onDone={onDone} />,
-  'story': ({ level, onDone }) => <StoryGame level={level} onDone={onDone} />,
+  'fillcolor': ({ spec, level, onDone }) => <FillColor spec={spec} level={level} onDone={onDone} />,
   'quick-tap': ({ spec, level, onDone }) => <QuickTap level={sized(level, spec)} onDone={onDone} />,
   'sorting': SortingGame,
   'match3': Match3Game,
   'maze': MazeGame,
   'find-difference': FindDifferenceGame,
   'sliding': SlidingGame,
+  // New engines. These read level.tierIndex directly (they don't use spec.size),
+  // so they need no `sized()` wrapper; the correct variant is chosen from spec.activityId.
+  'reflex': ({ spec, level, onDone }) => <Reflex spec={spec} level={level} onDone={onDone} />,
+  'recall': ({ spec, level, onDone }) => <RecallGame spec={spec} level={level} onDone={onDone} />,
+  'arithmetic': ({ spec, level, onDone }) => <ArithmeticGame spec={spec} level={level} onDone={onDone} />,
+  'logicgrid': ({ spec, level, onDone }) => <LogicGridGame spec={spec} level={level} onDone={onDone} />,
 }

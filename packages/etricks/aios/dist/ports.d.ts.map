@@ -1,0 +1,1 @@
+{"version":3,"file":"ports.d.ts","sourceRoot":"","sources":["../src/ports.ts"],"names":[],"mappings":"AAAA;;;;;;;;GAQG;AAEH,8EAA8E;AAC9E,MAAM,WAAW,oBAAoB;IACnC,gFAAgF;IAChF,MAAM,EAAE,MAAM,CAAC;IACf,6EAA6E;IAC7E,IAAI,EAAE,MAAM,CAAC;CACd;AAED;;;GAGG;AACH,MAAM,WAAW,aAAa;IAC5B,QAAQ,CAAC,OAAO,EAAE,oBAAoB,GAAG,OAAO,CAAC,MAAM,CAAC,CAAC;CAC1D"}

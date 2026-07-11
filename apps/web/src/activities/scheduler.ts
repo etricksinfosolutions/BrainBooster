@@ -48,6 +48,13 @@ export function sizeForMechanic(m: Mechanic, tierIndex: number): number {
     case 'maze':            return [4, 5, 6, 7, 8][t]      // grid dimension
     case 'find-difference': return [2, 3, 3, 4, 5][t]      // number of differences
     case 'sliding':         return [3, 3, 3, 4, 4][t]      // n×n tiles
+    // Self-scaling engines: reflex / recall / arithmetic / logicgrid read
+    // level.tierIndex directly and ignore spec.size. We still return a positive,
+    // tier-rising value so every scheduled spec has size ≥ 1 (never a 0-size spec).
+    case 'reflex':          return [3, 4, 5, 6, 7][t]
+    case 'recall':          return [3, 4, 5, 6, 7][t]
+    case 'arithmetic':      return [3, 4, 5, 6, 7][t]
+    case 'logicgrid':       return [3, 4, 5, 6, 7][t]
     default:                return t + 1                    // quiz / story (size unused; kept ≥1)
   }
 }
@@ -84,6 +91,19 @@ function toSpec(type: ActivityType, level: LevelDef, themeTags: string[]): Activ
  * same state always resolves the same spec, but variety emerges as history
  * grows. Never throws — falls back to a safe quiz if the catalogue is odd.
  */
+/**
+ * Rebuilds the EXACT spec for a specific activity id on a level — used to pin
+ * the activity a child already played on a completed level, so revisiting it
+ * from the map always replays the SAME kind of challenge (not a fresh reshuffle
+ * of which mechanic runs). Returns null if the id is no longer in the catalogue.
+ */
+export function specForActivityId(level: LevelDef, activityId: string): ActivitySpec | null {
+  const type = ACTIVITY_TYPES().find(a => a.id === activityId)
+  if (!type) return null
+  const tags = themeFor(worldForLevel(level.id)).tags
+  return toSpec(type, level, tags)
+}
+
 export function pickActivity(level: LevelDef, ctx: ScheduleContext): ActivitySpec {
   const tier = level.tierIndex
   const tags = themeFor(worldForLevel(level.id)).tags

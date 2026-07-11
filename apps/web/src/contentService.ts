@@ -134,7 +134,7 @@ function readCache(): ContentDoc | null {
   try { const raw = localStorage.getItem(CACHE_KEY); const d = raw && JSON.parse(raw); return isValid(d) ? d : null } catch { return null }
 }
 
-async function tryFetch(url: string, ms = 4000): Promise<ContentDoc | null> {
+async function tryFetch(url: string, ms = 2000): Promise<ContentDoc | null> {
   try {
     const ctrl = new AbortController()
     const timer = setTimeout(() => ctrl.abort(), ms)
@@ -149,8 +149,11 @@ async function tryFetch(url: string, ms = 4000): Promise<ContentDoc | null> {
 /** Loads content from the best available source and activates it. Resolves with
  *  which source won so the UI can surface it (e.g. an offline note). */
 export async function loadContent(): Promise<ContentSource> {
-  // 1) live API (authoritative — reflects newly added levels immediately)
-  const fromApi = API_BASE ? await tryFetch(`${API_BASE}/api/content`) : null
+  // 1) live API (authoritative — reflects newly added levels immediately). Skip it
+  //    entirely when the device is offline so launch never blocks on a doomed fetch
+  //    (the offline APK falls straight through to bundled content — no stall).
+  const online = typeof navigator === 'undefined' || navigator.onLine !== false
+  const fromApi = API_BASE && online ? await tryFetch(`${API_BASE}/api/content`) : null
   if (fromApi) { applyContent(fromApi); cache(fromApi); return 'server' }
 
   // 2) bundled content.json shipped with the PWA (also updatable by ops/CDN)

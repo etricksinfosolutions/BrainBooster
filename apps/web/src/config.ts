@@ -9,6 +9,9 @@
 export const BRAND = {
   appName: 'Brain Booster Kids',
   studio: 'EtricksGames',
+  // The cross-game player account / cloud-save identity, à la "Supercell ID".
+  // One etricksEmpire ID carries a child's progress across every EtricksGames title.
+  id: 'etricksEmpire ID',
   createdBy: 'An EtricksGames Production',
   copyright: '© 2026 EtricksGames. All Rights Reserved.',
   supportEmail: 'support@etricksgames.com',

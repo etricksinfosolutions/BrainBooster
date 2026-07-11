@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>eTricks — Game Player</title>
+<style>
+  :root{ --bg:#f2f0fa; --card:#fff; --ink:#2b2350; --dim:#6f639a; --accent:#7a5cc8; --accent-ink:#fff;
+    --ok:#2fa981; --ok-bg:#e6f8f1; --bad:#e5484d; --bad-bg:#fdeaea; --line:#e7e2f6; --radius:20px; }
+  *{ box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  body{ margin:0; font:16px/1.5 "Baloo 2",ui-rounded,"Nunito","Segoe UI",system-ui,sans-serif; color:var(--ink);
+    background:radial-gradient(1000px 500px at 85% -10%,rgba(255,180,58,.14),transparent 60%),
+               radial-gradient(800px 500px at -10% 20%,rgba(91,168,255,.14),transparent 55%),var(--bg);
+    min-height:100vh; }
+  .wrap{ max-width:640px; margin:0 auto; padding:18px 16px 60px; }
+  header{ display:flex; align-items:center; gap:10px; padding:6px 2px 14px; }
+  header h1{ font-size:19px; margin:0; }
+  header .dim{ color:var(--dim); font-size:13px; }
+  .card{ background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:20px;
+    box-shadow:0 10px 30px rgba(43,35,80,.08); }
+  .bar{ height:10px; background:var(--line); border-radius:20px; overflow:hidden; margin:2px 0 16px; }
+  .bar > i{ display:block; height:100%; background:var(--accent); transition:width .35s ease; }
+  .meta{ display:flex; justify-content:space-between; color:var(--dim); font-size:13px; margin-bottom:6px; }
+  .prompt{ font-size:21px; font-weight:700; margin:6px 0 18px; }
+  .choice{ display:block; width:100%; text-align:left; margin:9px 0; padding:15px 16px; font:inherit; font-weight:600;
+    background:#faf8ff; color:var(--ink); border:2px solid var(--line); border-radius:16px; cursor:pointer;
+    transition:transform .05s ease, background .15s ease, border-color .15s ease; }
+  .choice:hover:not(:disabled){ border-color:var(--accent); }
+  .choice:active:not(:disabled){ transform:translateY(2px); }
+  .choice:disabled{ cursor:default; }
+  .choice.correct{ background:var(--ok-bg); border-color:var(--ok); color:#14795a; }
+  .choice.wrong{ background:var(--bad-bg); border-color:var(--bad); color:#a3272b; }
+  .explain{ margin-top:14px; padding:13px 15px; background:#f5f2ff; border-left:3px solid var(--accent);
+    border-radius:12px; font-size:14.5px; }
+  .btn{ font:inherit; font-weight:700; padding:14px 22px; border-radius:16px; border:0; cursor:pointer;
+    background:var(--accent); color:var(--accent-ink); box-shadow:0 4px 0 #5d43a4; }
+  .btn:active{ transform:translateY(2px); box-shadow:0 2px 0 #5d43a4; }
+  .btn.ghost{ background:#efe9fb; color:var(--accent); box-shadow:0 4px 0 var(--line); }
+  .row{ display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin-top:18px; }
+  .big{ font-size:52px; text-align:center; margin:6px 0; }
+  .center{ text-align:center; }
+  .pill{ display:inline-block; padding:3px 11px; border-radius:20px; font-size:12px; background:#efe9fb; color:var(--accent); }
+  a{ color:var(--accent); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <span style="font-size:26px">🎮</span>
+    <div>
+      <h1 id="title">Loading…</h1>
+      <div class="dim" id="sub"></div>
+    </div>
+  </header>
+  <div id="view" class="card"></div>
+</div>
+<script>
+const $ = s => document.querySelector(s);
+const qp = new URLSearchParams(location.search);
+const GAME = qp.get('game') || 'brain-booster';
+const API  = (qp.get('api') || 'http://localhost:4000').replace(/\/$/,'');
+const view = $('#view');
+
+const el = (t, props={}, kids=[]) => { const n=document.createElement(t); Object.assign(n, props);
+  for(const k of [].concat(kids)) if(k!=null) n.append(k.nodeType?k:document.createTextNode(k)); return n; };
+
+async function api(path){ const r = await fetch(API+path); if(!r.ok) throw new Error(r.status+' '+path); return r.json(); }
+
+/** Normalise a quiz item OR an activity item to one playable question shape.
+ *  quiz pack → payload.items[{prompt,choices,correctIndex,explanation}]
+ *  activity pack → payload.activities[{content:{type,prompt,choices,correctIndex,explanation|answer}}] */
+function normalize(raw){
+  const c = raw.content || raw;
+  let choices = c.choices, correct = c.correctIndex;
+  if(!Array.isArray(choices) || !choices.length){
+    if(typeof c.answer === 'boolean'){ choices=['True','False']; correct = c.answer?0:1; }
+    else if(Array.isArray(c.options)){ choices=c.options; correct = c.options.indexOf(c.correctAnswer); }
+  }
+  return { prompt: c.prompt || c.question || c.text || '(no prompt)',
+           choices: Array.isArray(choices)?choices:[], correct: (typeof correct==='number'?correct:-1),
+           explanation: c.explanation || '', type: c.type || 'multiple-choice' };
+}
+
+function itemsFrom(pack){
+  const pl = pack.payload || pack;
+  const arr = pl.items || pl.activities || Object.values(pl).find(Array.isArray) || [];
+  return arr.map(normalize).filter(q => q.choices.length >= 2 && q.correct >= 0);
+}
+
+let QS = [], i = 0, score = 0, answered = false;
+
+async function boot(){
+  try{
+    const m = await api('/games/'+GAME+'/manifest');
+    $('#title').textContent = m.title || GAME;
+    $('#sub').textContent = 'engines: '+(m.engines||[]).join(', ')+' · '+(m.packs||[]).length+' packs';
+    const packs = await Promise.all((m.packs||[]).map(p => api('/packs/'+p.packId).catch(()=>null)));
+    QS = packs.filter(Boolean).flatMap(itemsFrom);
+    if(!QS.length){ view.replaceChildren(el('p',{className:'center'},
+      'No auto-playable questions found in this game’s packs (its activities may use a type this lightweight player doesn’t render). The manifest and packs still validate — open them from the admin console.')); return; }
+    i=0; score=0; render();
+  }catch(e){
+    view.replaceChildren(
+      el('p',{className:'center'}, '⚠️ Could not load “'+GAME+'”.'),
+      el('p',{className:'center dim'}, String(e.message)),
+      el('p',{className:'center dim'}, 'Is the backend running at '+API+'? Start it: node apps/backend/dist/main.js'));
+  }
+}
+
+function render(){
+  answered = false;
+  const q = QS[i];
+  const pct = Math.round((i/QS.length)*100);
+  const choiceBtns = q.choices.map((c, idx) => el('button', { className:'choice',
+    onclick: () => pick(idx, choiceBtns) }, c));
+  view.replaceChildren(
+    el('div',{className:'meta'},[ el('span',{}, 'Question '+(i+1)+' / '+QS.length), el('span',{}, '⭐ '+score) ]),
+    el('div',{className:'bar'},[ el('i',{style:'width:'+pct+'%'}) ]),
+    el('div',{className:'prompt'}, q.prompt),
+    ...choiceBtns,
+    el('div',{id:'after'}),
+  );
+}
+
+function pick(idx, btns){
+  if(answered) return; answered = true;
+  const q = QS[i];
+  const right = idx === q.correct;
+  if(right) score++;
+  btns.forEach((b, j) => { b.disabled = true;
+    if(j === q.correct) b.classList.add('correct');
+    else if(j === idx) b.classList.add('wrong'); });
+  const after = $('#after');
+  after.replaceChildren(
+    q.explanation ? el('div',{className:'explain'}, (right?'✅ ':'❌ ')+q.explanation) : el('div',{}),
+    el('div',{className:'row'},[
+      el('button',{className:'btn', onclick: next}, i+1 < QS.length ? 'Next →' : 'See results'),
+      el('span',{className:'pill'}, right ? 'Correct!' : 'Correct: '+q.choices[q.correct]),
+    ]),
+  );
+}
+
+function next(){ if(i+1 < QS.length){ i++; render(); } else results(); }
+
+function results(){
+  const pctScore = Math.round((score/QS.length)*100);
+  const stars = pctScore>=90?'⭐⭐⭐':pctScore>=60?'⭐⭐':pctScore>=30?'⭐':'✨';
+  view.replaceChildren(
+    el('div',{className:'big'}, pctScore>=60?'🎉':'💪'),
+    el('h2',{className:'center'}, 'You scored '+score+' / '+QS.length),
+    el('div',{className:'center', style:'font-size:30px;margin:4px 0'}, stars),
+    el('div',{className:'center dim'}, pctScore+'% correct'),
+    el('div',{className:'row', style:'justify-content:center'},[
+      el('button',{className:'btn', onclick:()=>{ i=0; score=0; render(); }}, '↻ Play again'),
+    ]),
+  );
+}
+
+boot();
+</script>
+</body>
+</html>

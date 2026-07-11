@@ -14,7 +14,18 @@
     "strict": true,
     "noUnusedLocals": false,
     "noUnusedParameters": false,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    "baseUrl": ".",
+    "paths": {
+      "@etricks/activity-engine": ["../../packages/etricks/activity-engine/dist/index.d.ts"],
+      "@etricks/activity-match3": ["../../packages/etricks/activity-match3/dist/index.d.ts"],
+      "@etricks/aios": ["../../packages/etricks/aios/dist/index.d.ts"],
+      "@etricks/contracts": ["../../packages/etricks/contracts/dist/index.d.ts"],
+      "@etricks/game-definition": ["../../packages/etricks/game-definition/dist/index.d.ts"],
+      "@etricks/game-shell": ["../../packages/etricks/game-shell/dist/index.d.ts"],
+      "@etricks/memory-engine": ["../../packages/etricks/memory-engine/dist/index.d.ts"],
+      "@etricks/quiz-engine": ["../../packages/etricks/quiz-engine/dist/index.d.ts"]
+    }
   },
   "include": ["src"]
 }

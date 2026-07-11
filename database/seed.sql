@@ -2,7 +2,7 @@
 -- Admin login: admin@brainbooster.local / password "admin123"
 -- (bcrypt hash below is for "admin123", cost 10).
 INSERT INTO users (email, password_hash, role, premium)
-VALUES ('admin@brainbooster.local', '$2a$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy', 'admin', true)
+VALUES ('admin@brainbooster.local', '$2a$10$E7QP7Y.OajE0rmhTYL9jwOeT.RtDrXWDf9dKjNftOUL4LyMwBTWga', 'admin', true)
 ON CONFLICT (email) DO NOTHING;
 
 INSERT INTO content_riddles (question, options, answer_index, min_tier) VALUES

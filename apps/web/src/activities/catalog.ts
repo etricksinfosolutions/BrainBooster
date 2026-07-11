@@ -36,9 +36,9 @@ const MARQUEE: ActivityType[] = [
   m('spell', 'spell-word', 'Spell It!', '🔤', 'language', 'Spelling', 0, 4),
   m('spell', 'word-builder', 'Word Builder', '🔡', 'language', 'Spelling', 2, 4),
 
-  // Story
-  m('story', 'story-corner', 'Story Corner', '📖', 'language', 'Stories', 0, 4),
-  m('story', 'story-adventure', 'Story Adventure', '📚', 'language', 'Stories', 1, 4),
+  // Fill the Colors (colour-by-number) — replaces the Story activity
+  m('fillcolor', 'fill-colors', 'Fill the Colors', '🎨', 'observation', 'Creative', 0, 4),
+  m('fillcolor', 'color-by-number', 'Color by Number', '🖌️', 'observation', 'Creative', 1, 4),
 
   // Speed
   m('quick-tap', 'fruit-frenzy', 'Fruit Frenzy', '🍓', 'speed', 'Speed', 0, 4),
@@ -55,6 +55,34 @@ const MARQUEE: ActivityType[] = [
   fresh('find-difference', 'spot-mistake', 'Spot the Mistake', '❌', 'observation', 'Spot', 1, 4),
   fresh('sliding', 'sliding-puzzle', 'Sliding Puzzle', '🧩', 'logic', 'Puzzle', 1, 4),
   fresh('sliding', 'picture-slide', 'Picture Slide', '🖼️', 'logic', 'Puzzle', 2, 4),
+
+  // NEW engines (each renders 5 variants switched on activityId). The `id` MUST
+  // equal the variant id the mechanic switches on (reflex.tsx / recall.tsx /
+  // arithmetic.tsx / logicgrid.tsx). Skills are mapped to valid Skill values.
+  // Reflex — five speed/reflex mini-games
+  fresh('reflex', 'reflex-tap', 'Tap Fast', '👆', 'speed', 'Reflex', 0, 4),
+  fresh('reflex', 'reflex-reaction', 'Reaction Time', '🚦', 'speed', 'Reflex', 0, 4),
+  fresh('reflex', 'reflex-balloon', 'Balloon Pop', '🎈', 'observation', 'Reflex', 0, 4),
+  fresh('reflex', 'reflex-target', 'Target Hit', '🎯', 'speed', 'Reflex', 0, 4),
+  fresh('reflex', 'reflex-colorswitch', 'Color Switch', '🌈', 'observation', 'Reflex', 0, 4),
+  // Recall — five show-then-recall memory games
+  fresh('recall', 'recall-number', 'Number Recall', '🔢', 'memory', 'Memory', 0, 4),
+  fresh('recall', 'recall-word', 'Word Recall', '📝', 'memory', 'Memory', 0, 4),
+  fresh('recall', 'recall-color', 'Color Recall', '🎨', 'memory', 'Memory', 0, 4),
+  fresh('recall', 'recall-position', 'Position Memory', '📍', 'memory', 'Memory', 0, 4),
+  fresh('recall', 'recall-image', 'Image Recall', '📸', 'memory', 'Memory', 0, 4),
+  // Arithmetic — five fast mental-math games
+  fresh('arithmetic', 'math-add', 'Mental Addition', '➕', 'math', 'Mental Math', 0, 4),
+  fresh('arithmetic', 'math-sub', 'Mental Subtraction', '➖', 'math', 'Mental Math', 0, 4),
+  fresh('arithmetic', 'math-mul', 'Multiplication Speed', '✖️', 'math', 'Mental Math', 2, 4),
+  fresh('arithmetic', 'math-div', 'Division Challenge', '➗', 'math', 'Mental Math', 3, 4),
+  fresh('arithmetic', 'math-race', 'Arithmetic Race', '🏁', 'math', 'Mental Math', 1, 4),
+  // Logic grid — five procedural logic puzzles
+  fresh('logicgrid', 'logic-pyramid', 'Number Pyramid', '🔺', 'math', 'Logic', 0, 4),
+  fresh('logicgrid', 'logic-missing', 'Missing Piece', '🧩', 'logic', 'Logic', 0, 4),
+  fresh('logicgrid', 'logic-pattern', 'Pattern Completion', '📈', 'logic', 'Logic', 0, 4),
+  fresh('logicgrid', 'logic-domino', 'Domino Logic', '🎲', 'math', 'Logic', 1, 4),
+  fresh('logicgrid', 'logic-deduce', 'Deductive Reasoning', '🔎', 'logic', 'Logic', 1, 4),
 ]
 
 // --- Themed expansion --------------------------------------------------------
@@ -85,7 +113,7 @@ const THEMED: { mechanic: Mechanic; verb: string; skill: Skill; category: string
   { mechanic: 'quick-tap',       verb: 'Dash',           skill: 'speed',       category: 'Speed',   minTier: 0, maxTier: 4 },
   { mechanic: 'maze',            verb: 'Maze',           skill: 'logic',       category: 'Maze',    minTier: 1, maxTier: 4 },
   { mechanic: 'sliding',         verb: 'Slide Puzzle',   skill: 'logic',       category: 'Puzzle',  minTier: 1, maxTier: 4 },
-  { mechanic: 'story',           verb: 'Tales',          skill: 'language',    category: 'Stories', minTier: 0, maxTier: 4 },
+  { mechanic: 'fillcolor',       verb: 'Coloring',       skill: 'observation', category: 'Creative', minTier: 0, maxTier: 4 },
 ]
 
 // The genuinely-new interaction verbs get the "fresh" badge.

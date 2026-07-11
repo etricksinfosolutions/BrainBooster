@@ -61,10 +61,18 @@ const candCache = new Map<string, string[]>()
  *       (e.g. Endless-Engine worlds invented on-device).
  *  The renderer walks this list, then an illustrated placeholder — never an
  *  emoji. Memoised so the browser serves one cached image per subject. */
+// Live gen-AI is OFF by default. In a shipped build it means an external HTTP
+// request to an image generator PER sprite — slow, blocks nothing visually (the
+// distinct Twemoji baseline shows immediately) but churns the network and stalls
+// image-heavy activity screens. Games rely on the bundled baked pack + the
+// offline Twemoji baseline. Ops can opt back in for on-device invented worlds.
+let allowLiveGen = false
+export function setAllowLiveGen(on: boolean) { allowLiveGen = on; candCache.clear() }
+
 export function spriteCandidates(key: string): string[] {
   const hit = candCache.get(key)
   if (hit) return hit
-  const list = [bakedUrl(key), genaiUrl(key)]
+  const list = allowLiveGen ? [bakedUrl(key), genaiUrl(key)] : [bakedUrl(key)]
   candCache.set(key, list)
   return list
 }

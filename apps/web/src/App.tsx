@@ -1,13 +1,17 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react'
 import {
   StoreProvider, useStore, unlockedMax, startMusic, stopMusic,
-  setMusicVolume, setSfxVolume, setMusicWorld,
+  setMusicVolume, setSfxVolume, setMusicWorld, accessibilityClass,
 } from './state/store'
 import { worldForLevel } from './data/worlds'
 import { themeFor } from './theme'
 import { setNarratorForWorld } from './state/narrator'
 import { loadContent, hydrateActivities, prefetchActivities } from './contentService'
 import { Capacitor } from '@capacitor/core'
+// Launch splash art — sourced directly from apps/web/assets (bundled by Vite):
+// splash.png = eTricks Games studio logo, logo.png = Brain Booster game logo.
+import egLogo from '../assets/splash.png'
+import bbLogo from '../assets/logo.png'
 
 // Native (Android) niceties: hand off from the native splash to the app and
 // tint the status bar. No-ops on the web.
@@ -41,7 +45,11 @@ function useBackgroundMusic(enabled: boolean) {
 function Router() {
   const { state } = useStore()
   const big = state.settings.bigButtons
+  const a11y = accessibilityClass(state.settings)
   useBackgroundMusic(state.settings.music)
+
+  // Screen readers announce content in the child's chosen language.
+  useEffect(() => { document.documentElement.lang = state.settings.language }, [state.settings.language])
 
   // Live volume knobs.
   useEffect(() => { setMusicVolume(state.settings.musicVolume) }, [state.settings.musicVolume])
@@ -67,7 +75,7 @@ function Router() {
   // the challenge always stays the primary focus of the screen.
   const inGame = state.screen === 'play'
   return (
-    <div className={`app-shell ${big ? 'big-buttons' : ''} ${inGame ? 'in-game' : ''}`}>
+    <div className={`app-shell ${big ? 'big-buttons' : ''} ${inGame ? 'in-game' : ''} ${a11y}`}>
       {!inGame && <Decor />}
       {state.screen === 'home' && <Home />}
       {state.screen === 'map' && <LevelMap />}
@@ -85,8 +93,59 @@ function Router() {
   )
 }
 
+// One launch splash, two phases: the eTricks Games studio logo ("presents…") then
+// the Brain Booster game logo — a single animated sequence, not two screens. It
+// holds on the game logo until content is ready, then hands off to the app.
+function LaunchSequence({ ready, onDone }: { ready: boolean; onDone: () => void }) {
+  const [phase, setPhase] = useState<'company' | 'game'>('company')
+  const [leaving, setLeaving] = useState(false)
+
+  // Preload the game logo during the company phase so the crossfade never flashes.
+  useEffect(() => { const img = new Image(); img.src = bbLogo }, [])
+
+  // Company logo → game logo after a short beat.
+  useEffect(() => {
+    const t = setTimeout(() => setPhase('game'), 4000)
+    return () => clearTimeout(t)
+  }, [])
+
+  // On the game logo, leave once content is ready (min dwell 1.5s, hard cap 4.5s).
+  useEffect(() => {
+    if (phase !== 'game') return
+    const t0 = Date.now()
+    const id = setInterval(() => {
+      const el = Date.now() - t0
+      if ((ready && el >= 1500) || el >= 4500) {
+        clearInterval(id); setLeaving(true); setTimeout(onDone, 550)
+      }
+    }, 120)
+    return () => clearInterval(id)
+  }, [phase, ready, onDone])
+
+  return (
+    <div className={`launch ${leaving ? 'is-leaving' : ''}`}>
+      <div className="launch-rays" aria-hidden="true" />
+      <div className="launch-sparkles" aria-hidden="true">
+        {Array.from({ length: 16 }).map((_, i) => (
+          <span key={i} style={{ '--i': i } as React.CSSProperties} />
+        ))}
+      </div>
+      {phase === 'company' ? (
+        <div className="launch-stage" key="company" role="img" aria-label="eTricks Games presents">
+          <img className="launch-logo eg" src={egLogo} alt="" draggable={false} />
+          <div className="launch-presents">ETRICKS GAMES PRESENTS...</div>
+        </div>
+      ) : (
+        <div className="launch-stage" key="game" role="img" aria-label="Brain Booster">
+          <img className="launch-logo bb" src={bbLogo} alt="" draggable={false} />
+        </div>
+      )}
+    </div>
+  )
+}
+
 export default function App() {
-  const [showSplash, setShowSplash] = useState(true)
+  const [launching, setLaunching] = useState(true)   // the two-phase launch splash
   const [ready, setReady] = useState(false)   // becomes true once server content is applied
   const started = useRef(false)
   useNativeShell()
@@ -110,8 +169,8 @@ export default function App() {
 
   return (
     <StoreProvider>
-      {(showSplash || !ready) && <Splash onDone={() => setShowSplash(false)} />}
-      {ready && <Router />}
+      {launching && <LaunchSequence ready={ready} onDone={() => setLaunching(false)} />}
+      {!launching && <Router />}
     </StoreProvider>
   )
 }

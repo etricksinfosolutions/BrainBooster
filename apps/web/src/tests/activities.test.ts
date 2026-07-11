@@ -4,7 +4,7 @@ import { pickActivity, sizeForMechanic, weakestSkill, ScheduleContext } from '..
 import { MECHANIC_REGISTRY } from '../activities/mechanics';
 import { Mechanic } from '../activities/types';
 import { validateText, validateItem, runPipeline, imageGenerator, llmGenerator, styledPrompt, GeneratedItem } from '../activities/generators';
-import { freshBoard, hasLegalMove, resolveSwap, findMatches } from '../activities/match3';
+import { freshBoard, hasLegalMove, resolveSwap, findMatches } from '@etricks/activity-match3';
 import { LEVELS } from '../data/levels';
 
 const emptyCtx = (): ScheduleContext => ({ recentActivities: [], recentMechanics: [], activityLog: {}, skills: {} });

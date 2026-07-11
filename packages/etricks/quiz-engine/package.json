@@ -1,0 +1,31 @@
+{
+  "name": "@etricks/quiz-engine",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Reusable, framework-free Quiz Engine. Humans build this once; AIOS manufactures the questions.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "tsx --test src/**/*.test.ts",
+    "clean": "rimraf dist .turbo"
+  },
+  "dependencies": {
+    "@etricks/contracts": "workspace:*",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "rimraf": "^6.0.1",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}

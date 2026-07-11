@@ -51,10 +51,84 @@ function shuffle<T>(arr: T[]): T[] {
   for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(rnd() * (i + 1)); [a[i], a[j]] = [a[j], a[i]] }
   return a
 }
-/** Builds an options array with the answer shuffled in; returns {options, answer}. */
+/**
+ * Builds an options array with the answer shuffled in; returns {options, answer}.
+ * ROOT-CAUSE guard for wrong answers (#2): distractors must be plausible but NEVER
+ * equal the correct answer, and every option must be distinct — otherwise a "wrong"
+ * option would secretly also be correct, or two identical options would confuse.
+ */
 function mc(correct: string, wrong: string[]): { options: string[]; answer: number } {
-  const options = shuffle([correct, ...wrong])
+  const distinct: string[] = []
+  for (const w of wrong) if (w !== correct && !distinct.includes(w)) distinct.push(w)
+  const options = shuffle([correct, ...distinct])
   return { options, answer: options.indexOf(correct) }
+}
+
+/** A content signature (ignores id/difficulty) so the SAME puzzle can't repeat in a level (#1). */
+export function questionSignature(q: Question): string {
+  return `${q.category}|${q.prompt}|${q.media ?? ''}|${[...q.options].sort().join('')}`
+}
+
+/**
+ * Validates a question before it reaches the player (#2, #3). Returns an error string
+ * (why it's invalid) or null if valid. Reusable across the whole pipeline and tests.
+ */
+export function validateQuestion(q: Question): string | null {
+  if (!q.prompt || !q.prompt.trim()) return 'empty prompt'
+  if (!Array.isArray(q.options) || q.options.length < 2) return 'too few options'
+  if (q.options.some(o => !o || !String(o).trim())) return 'empty option'
+  if (new Set(q.options).size !== q.options.length) return 'duplicate options'
+  if (!Number.isInteger(q.answer) || q.answer < 0 || q.answer >= q.options.length) return 'answer out of range'
+  // Shadow Matching (#3): the displayed silhouette MUST be exactly one selectable option.
+  if (q.mediaShadow && q.media) {
+    if (!q.options.includes(q.media)) return 'shadow has no matching option'
+    if (q.options[q.answer] !== q.media) return 'shadow answer mismatch'
+  }
+  return null
+}
+
+/** A concise, contextual explanation for a correct answer (#6) — used when a generator omits one. */
+function explainFor(q: Question): string {
+  if (q.explain && q.explain.trim()) return q.explain
+  const ans = q.options[q.answer] ?? ''
+  switch (q.category) {
+    case 'shadow': return `That silhouette belongs to ${ans}. Matching things by their outline sharpens visual thinking.`
+    case 'observation': return `${ans} is the odd one out — it doesn't belong with the others.`
+    case 'count': return `Counting each item carefully gives ${ans}.`
+    case 'math': return `The answer is ${ans}. Working through it step by step gets you there every time.`
+    case 'pattern': return `The pattern continues with ${ans} — spotting what repeats is the trick.`
+    case 'sequence': return `${ans} comes next in the sequence.`
+    case 'knowledge': return `Correct — ${ans}. A great fact to remember!`
+    case 'language': return `Yes — ${ans}. That's how you grow your word power, one step at a time.`
+    case 'riddle': return `The answer is ${ans}. Riddles train you to think in clever new ways!`
+    default: return `Correct — ${ans}!`
+  }
+}
+
+/** Identity of a question AS THE PLAYER SEES IT — same prompt, same ordered options, same answer. */
+export function identicalKey(q: Question): string {
+  return `${q.prompt}|${q.media ?? ''}|${q.options.join('␟')}|${q.answer}`
+}
+
+/** Reshuffle a question's options (keeping `answer` correct) — the exhaustion fallback for #1. */
+export function reshuffleQuestionOptions(q: Question): Question {
+  if (q.options.length < 2) return q
+  const correct = q.options[q.answer]
+  const options = shuffle(q.options)
+  return { ...q, options, answer: options.indexOf(correct) }
+}
+
+/** Validates a whole level's set: each valid, and no two IDENTICAL questions (#1, #11). */
+export function validateLevelQuestions(qs: Question[]): string | null {
+  const seen = new Set<string>()
+  for (const q of qs) {
+    const err = validateQuestion(q)
+    if (err) return `${q.id}: ${err}`
+    const key = identicalKey(q)
+    if (seen.has(key)) return `${q.id}: identical question repeated in level`
+    seen.add(key)
+  }
+  return null
 }
 
 // --- Themed asset pools (large, categorised) for shadows / odd-one-out --------
@@ -302,13 +376,32 @@ export function buildLevelQuestions(level: LevelDef, seen: Set<string>, category
   })()
   const out: Question[] = []
   const usedIds = new Set<string>()
+  const usedContent = new Set<string>()    // prefer FRESH content within a level (#1)
+  const usedIdentical = new Set<string>()  // hard guarantee: never two IDENTICAL questions (#1)
   for (let d = 0 as Difficulty; d <= 5; d = (d + 1) as Difficulty) {
     let q = provide(cat, d, seen, flavour)
     let tries = 0
-    // Avoid anything already seen or already in this level (generative → just reroll).
-    while ((seen.has(q.id) || usedIds.has(q.id)) && tries < 24) { q = provide(cat, d, seen, flavour); tries++ }
-    usedIds.add(q.id)
-    out.push({ ...q, difficulty: d })
+    // Reroll anything already seen, already in this level (by id OR content), or invalid (#1,#2,#3).
+    while (
+      tries < 40 &&
+      (seen.has(q.id) || usedIds.has(q.id) || usedContent.has(questionSignature(q)) || validateQuestion(q) !== null)
+    ) {
+      q = provide(cat, d, seen, flavour)
+      tries++
+    }
+    // Attach a contextual explanation (#6) and lock in difficulty.
+    let finalQ: Question = { ...q, difficulty: d, explain: explainFor(q) }
+    // Pool exhausted (a small category couldn't yield fresh content): never ship an
+    // IDENTICAL question — reshuffle its options so at least the order differs (#1).
+    let guard = 0
+    while (usedIdentical.has(identicalKey(finalQ)) && guard < 12) {
+      finalQ = reshuffleQuestionOptions(finalQ)
+      guard++
+    }
+    usedIds.add(finalQ.id)
+    usedContent.add(questionSignature(finalQ))
+    usedIdentical.add(identicalKey(finalQ))
+    out.push(finalQ)
   }
   return out
 }

@@ -6,7 +6,7 @@ import { describe, it, expect } from 'vitest'
 import { WORLDS, MASCOTS } from '../data/worlds'
 import { MEMORY_EMOJI, FRUITS, NOT_FRUITS } from '../data/content'
 import { isKnownSubject, promptFor, seedFor, subjectFor, categoryFor, slugFor, assetManifest, ART_STYLE } from '../assets/registry'
-import { spriteUrl, spriteCandidates } from '../assets/engine'
+import { spriteUrl, spriteCandidates, setAllowLiveGen } from '../assets/engine'
 
 describe('Asset Engine registry', () => {
   it('has a first-class illustrated subject for every world content token', () => {
@@ -33,11 +33,26 @@ describe('Asset Engine registry', () => {
     expect(spriteUrl('🐙')).not.toBe(spriteUrl('🦀'))
   })
 
-  it('resolves a baked-first candidate chain ending in gen-AI (never emoji)', () => {
+  it('resolves the bundled baked sprite only by default — no live external gen-AI', () => {
+    // Live gen-AI is OFF by default so a shipped build never fires an external
+    // image-generation request per sprite (the offline Twemoji baseline covers the
+    // rest). The bundled baked pack is the sole network candidate.
     const c = spriteCandidates('🐙')
-    expect(c[0]).toBe(`/sprites/${slugFor('🐙')}.webp`)   // bundled pack first
-    expect(c[c.length - 1]).toContain('image.pollinations.ai') // gen-AI self-heal
-    expect(c.length).toBeGreaterThanOrEqual(2)
+    expect(c[0]).toBe(`/sprites/${slugFor('🐙')}.webp`)   // bundled pack
+    expect(c.length).toBe(1)
+    expect(c.some((u) => u.includes('image.pollinations.ai'))).toBe(false)
+  })
+
+  it('opts into gen-AI self-heal only when explicitly enabled', () => {
+    setAllowLiveGen(true)
+    try {
+      const c = spriteCandidates('🐙')
+      expect(c[0]).toBe(`/sprites/${slugFor('🐙')}.webp`)
+      expect(c[c.length - 1]).toContain('image.pollinations.ai')
+      expect(c.length).toBeGreaterThanOrEqual(2)
+    } finally {
+      setAllowLiveGen(false)
+    }
   })
 
   it('gives every subject a UNIQUE slug — no two tokens share one illustration', () => {

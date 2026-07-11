@@ -1,0 +1,41 @@
+{
+  "name": "@etricks/game-shell",
+  "version": "0.0.1",
+  "private": true,
+  "description": "The game-agnostic application framework every manufactured game runs inside (ADR-0027). Provides the full screen set (splash → home → map → activity → rewards → shop → settings …) and platform systems (progression, economy, cloud sync, theme, localization, analytics) as configurable, injectable pieces. A game = game-shell + activity-engine + theme + content + assets + branding.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "tsx --test src/**/*.test.ts",
+    "clean": "rimraf dist .turbo"
+  },
+  "dependencies": {
+    "@etricks/activity-engine": "workspace:*",
+    "@etricks/contracts": "workspace:*",
+    "@etricks/game-definition": "workspace:*",
+    "zod": "^3.24.1"
+  },
+  "peerDependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "rimraf": "^6.0.1",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}

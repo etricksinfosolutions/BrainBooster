@@ -4,14 +4,14 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react'
 import { LEVELS, LevelDef, SKILL_LABEL, Skill, recommendLevel } from '../data/levels'
 import {
-  useStore, useT, unlockedMax, levelForXp, sfx, speak, randomPraise, unlockCost,
+  useStore, useT, unlockedMax, levelForXp, sfx, speak, randomPraise, unlockCost, HINT_COST, SKIP_COST,
   AVATARS, AVATAR_PRICES, HATS, HAT_PRICES, PREMIUM_AVATARS, PREMIUM_HATS,
   GEM_AVATARS, GEM_AVATAR_PRICES, GEM_HATS, GEM_HAT_PRICES,
 } from '../state/store'
-import { GAME_REGISTRY } from '../games'
+import { GAME_REGISTRY, hintBus } from '../games'
 import { MECHANIC_REGISTRY } from '../activities/mechanics'
 import { WORLDS, World, worldForLevel, mascotByKey } from '../data/worlds'
-import { factsForThemes } from '../data/facts'
+import { factsForThemes, FACTS } from '../data/facts'
 import { themeFor, WorldTheme } from '../theme'
 import { narrate, welcomeScript, setNarratorForWorld } from '../state/narrator'
 import { loadSyncState, connect, disconnect, backupNow, restoreProgress, setAutoSync, label as syncLabel, SyncProvider, SyncState } from '../state/cloudSync'
@@ -651,6 +651,40 @@ function PlayBackdrop({ theme }: { theme: WorldTheme }) {
   )
 }
 
+/** Small coin-price badge shown on the Hint / Skip buttons. */
+function CoinBadge({ cost, affordable }: { cost: number; affordable: boolean }) {
+  return (
+    <span className={`pab-cost ${affordable ? '' : 'is-broke'}`} aria-hidden="true">
+      <UiIcon name="coin" emoji="🪙" size={11} alt="coins" /> {cost}
+    </span>
+  )
+}
+
+/** Bottom action bar (#8): icon-only Material buttons. Hint (25🪙) and Skip
+ *  (100🪙) carry a coin-price badge so the cost is always clear to the child. */
+function PlayActionBar({ onBack, onHint, onReset, onSkip, coins }: {
+  onBack: () => void; onHint: () => void; onReset: () => void; onSkip: () => void; coins: number
+}) {
+  return (
+    <nav className="play-actionbar" aria-label="Game controls">
+      <button type="button" className="pab-btn" aria-label="Back to the adventure map" onClick={onBack}>
+        <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path fill="currentColor" d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20z" /></svg>
+      </button>
+      <button type="button" className="pab-btn has-cost" aria-label={`Show a hint for ${HINT_COST} coins`} onClick={onHint}>
+        <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path fill="currentColor" d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7z" /></svg>
+        <CoinBadge cost={HINT_COST} affordable={coins >= HINT_COST} />
+      </button>
+      <button type="button" className="pab-btn has-cost" aria-label={`Skip this challenge for ${SKIP_COST} coins`} onClick={onSkip}>
+        <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path fill="currentColor" d="M6 6h2v12H6zm3.5 6l8.5 6V6z" /></svg>
+        <CoinBadge cost={SKIP_COST} affordable={coins >= SKIP_COST} />
+      </button>
+      <button type="button" className="pab-btn" aria-label="Reset this activity" onClick={onReset}>
+        <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path fill="currentColor" d="M17.65 6.35A7.96 7.96 0 0 0 12 4a8 8 0 1 0 7.75 10h-2.08A6 6 0 1 1 12 6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z" /></svg>
+      </button>
+    </nav>
+  )
+}
+
 export function Play() {
   const { state, dispatch } = useStore()
   const level = state.activeLevel!
@@ -684,22 +718,44 @@ export function Play() {
   return (
     <div className={`screen play ${theme.dark ? 'play-dark' : ''}`}>
       <PlayBackdrop theme={theme} />
-      <div className="play-top">
-        <button className="btn btn-ghost btn-back" aria-label="Back to the adventure map"
-          onClick={() => { sfx.tap(); dispatch({ type: 'skip-activity' }); dispatch({ type: 'nav', screen: 'map' }) }}>←</button>
-        <div className="play-title">
-          <strong>Level {level.id} · {title}</strong>
-          <small>{world.emoji} {world.name} · {level.tier} · trains {SKILL_LABEL[trains]}</small>
+      {/* Header (#9): player avatar (→ Home) · level number · level name */}
+      <header className="play-head">
+        <button className="play-avatar" aria-label="Go to Home"
+          onClick={() => { sfx.tap(); dispatch({ type: 'skip-activity' }); dispatch({ type: 'nav', screen: 'home' }) }}>
+          <EmojiImg emoji={state.profile.avatar} size={34} alt="Home" />
+        </button>
+        <div className="play-head-title">
+          <strong>Level {level.id}</strong>
+          <span>{title}</span>
         </div>
-        <button className="btn btn-ghost btn-reset" aria-label="Reset this activity" title="Reset"
-          onClick={() => { sfx.tap(); startRef.current = Date.now(); setResetN(n => n + 1) }}>↻</button>
-      </div>
+        <span className="play-head-spacer" aria-hidden="true" />
+      </header>
       {/* The game mounts only after the transition, so timed challenges and
           sequence previews never run hidden behind the intro. */}
       {!intro && (Mechanic
         ? <Mechanic key={`${level.id}-${activity!.activityId}-${resetN}`} spec={activity!} level={level} onDone={finish} />
         : <Game key={`${level.id}-${resetN}`} level={level} onDone={finish} />)}
       {intro && <WorldIntro world={world} onDone={() => { setIntro(false); startRef.current = Date.now() }} />}
+      {/* Bottom action bar (#8): icon-only Back · Hint (25🪙) · Skip (100🪙) · Reset */}
+      {!intro && (
+        <PlayActionBar
+          coins={state.profile.coins}
+          onBack={() => { sfx.tap(); dispatch({ type: 'skip-activity' }); dispatch({ type: 'nav', screen: 'map' }) }}
+          onHint={() => {
+            // A hint costs 25 coins and only charges when there's actually a hint
+            // to reveal (quiz activities register one via hintBus). If the child
+            // can't afford it, buzz and leave the question untouched.
+            if (!hintBus.reveal) { sfx.tap(); return }
+            if (state.profile.coins < HINT_COST) { sfx.bad(); return }
+            sfx.coin(); dispatch({ type: 'use-hint' }); hintBus.request()
+          }}
+          onSkip={() => {
+            if (state.profile.coins < SKIP_COST) { sfx.bad(); return }
+            sfx.coin(); dispatch({ type: 'skip-challenge', level })
+          }}
+          onReset={() => { sfx.tap(); startRef.current = Date.now(); setResetN(n => n + 1) }}
+        />
+      )}
     </div>
   )
 }
@@ -720,9 +776,20 @@ export function Reward() {
   const level = LEVELS[r.levelId - 1]
   const world = worldForLevel(level.id)
   const praise = useMemo(randomPraise, [])
+  // After a quiz is cleared the child can retake it or move on — and if they do
+  // nothing, a 10-second countdown carries them to the next quiz automatically.
+  const [countdown, setCountdown] = useState(10)
+  const acted = useRef(false)
+  const proceed = () => { if (acted.current) return; acted.current = true; sfx.tap(); dispatch({ type: 'nav', screen: 'fact' }) }
+  const retake = () => { if (acted.current) return; acted.current = true; sfx.tap(); dispatch({ type: 'start-level', level }) }
   useEffect(() => {
     if (state.settings.celebration) sfx.fanfare()
     speak(praise, state.settings.voice)
+    const t = setInterval(() => setCountdown(c => {
+      if (c <= 1) { clearInterval(t); proceed(); return 0 }
+      return c - 1
+    }), 1000)
+    return () => clearInterval(t)
   }, []) // eslint-disable-line
   return (
     <div className="screen reward-screen" style={{ ['--accent' as any]: world.accent }}>
@@ -747,7 +814,10 @@ export function Reward() {
             {!!r.bonusNoHint && <span className="bonus-chip"><EmojiImg emoji="💡" size={15} /> No hints! +{r.bonusNoHint}</span>}
           </div>
         )}
-        <button className="btn btn-primary btn-big" onClick={() => { sfx.tap(); dispatch({ type: 'nav', screen: 'fact' }) }}>Continue →</button>
+        <div className="reward-actions">
+          <button className="btn btn-ghost btn-big" onClick={retake}>🔁 Retake quiz</button>
+          <button className="btn btn-primary btn-big" onClick={proceed}>Next → <span className="reward-count" aria-label={`auto-continue in ${countdown} seconds`}>{countdown}</span></button>
+        </div>
       </div>
     </div>
   )
@@ -762,15 +832,25 @@ export function FactScreen() {
   // reveals the next fact in the world's collection.
   const world = worldForLevel(state.lastReward?.levelId ?? unlockedMax(state.profile))
   const pool = factsForThemes(themeFor(world).tags)
-  const unlocked = Math.max(0, state.profile.factIndex - 1)
-  // Defensive: never let an empty fact pool (e.g. server-driven content) NaN a
-  // modulo and white-screen the mandatory post-level flow — skip straight on.
-  const fact = pool.length ? pool[unlocked % pool.length] : null
-  const factIdx = pool.length ? unlocked % pool.length : 0
+  // Never repeat a fun fact for a user across the WHOLE game: show the first fact
+  // this child hasn't seen — preferring this world's themed pool, then any fact
+  // anywhere. Captured once at mount so it stays put when we mark it seen.
+  const seenAtMount = useRef<Set<string>>(new Set(state.profile.seenFacts ?? []))
+  const fact = useMemo(() => {
+    const unseenWorld = pool.find(f => !seenAtMount.current.has(f.title))
+    if (unseenWorld) return unseenWorld
+    const unseenAny = FACTS.find(f => !seenAtMount.current.has(f.title))
+    if (unseenAny) return unseenAny
+    // Every fact in the game has been shown at least once — fall back gracefully.
+    const unlocked = Math.max(0, state.profile.factIndex - 1)
+    return pool.length ? pool[unlocked % pool.length] : null
+  }, []) // eslint-disable-line
+  const factIdx = fact ? Math.max(0, FACTS.indexOf(fact)) : 0
   useEffect(() => {
     if (!fact) { dispatch({ type: 'dismiss-reward' }); return }
     track('fact_viewed', { category: fact.category })
     speak(`Did you know? ${fact.title}. ${fact.text}`, state.settings.voice)
+    dispatch({ type: 'mark-fact-seen', key: fact.title })
   }, []) // eslint-disable-line
   if (!fact) return null
   return (
@@ -1065,12 +1145,12 @@ function CloudSync() {
   if (sync.account) {
     return (
       <>
-        <h2 className="section-title">☁️ Cloud Sync</h2>
+        <h2 className="section-title">👑 {BRAND.id}</h2>
         <div className="auth-signed">
           <span className="auth-signed-badge"><BrandIcon brand={sync.account.provider} /></span>
           <div className="auth-signed-body">
             <strong>{sync.account.displayName}</strong>
-            <small>Signed in with {syncLabel(sync.account.provider)}</small>
+            <small>{BRAND.id} · {syncLabel(sync.account.provider)}</small>
           </div>
           <button className="auth-signout" onClick={() => run('signout', () => disconnect())}>Sign out</button>
         </div>
@@ -1100,12 +1180,12 @@ function CloudSync() {
   // Signed-out view: the premium sign-in hero.
   return (
     <>
-      <h2 className="section-title">☁️ Cloud Sync</h2>
+      <h2 className="section-title">👑 {BRAND.id}</h2>
       <div className="auth-hero">
         <div className="auth-hero-head">
           <span className="auth-hero-emoji">🎮</span>
-          <h3>Save your adventure</h3>
-          <p>Sign in to keep your progress safe and play across all your devices.</p>
+          <h3>Save your adventure to the cloud</h3>
+          <p>Create your {BRAND.id} to keep your progress safe and play across all your devices — it never forgets where you left off.</p>
         </div>
         <div className="auth-list">
           {AUTH_PROVIDERS.map(p => {
@@ -1179,6 +1259,8 @@ export function SettingsScreen() {
       <h2 className="section-title">♿ Accessibility</h2>
       <Toggle k="colorBlind" icon="🎨" label={t('colorblind')} hint="Adds shapes to color games" />
       <Toggle k="bigButtons" icon="🔘" label={t('big_buttons')} hint="Bigger targets for small hands" />
+      <Toggle k="reducedMotion" icon="🌀" label="Reduce motion" hint="Calmer screen — less animation and movement" />
+      <Toggle k="highContrast" icon="◐" label="High contrast" hint="Stronger colours and outlines for easier reading" />
 
       {/* Cloud account synchronization */}
       <CloudSync />

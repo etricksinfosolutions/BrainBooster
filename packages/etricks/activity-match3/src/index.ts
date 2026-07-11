@@ -1,9 +1,12 @@
 // ---------------------------------------------------------------------------
-// Brain Booster Kids — Match-3 board logic (pure, testable)
+// Match-3 board logic (pure, testable) — extracted verbatim from Brain Booster
+// (apps/web/src/activities/match3.ts) as the platform's first `activity-*`
+// package (see ADR-0012 migration, ADR-0013 naming). Behaviour is UNCHANGED.
+//
 // Boards are flat arrays of kind-indices (0..kindCount-1). Kept free of React
 // so the invariants that matter — no free matches on deal, and ALWAYS at least
 // one legal move (never a dead board a child can get stuck on) — are unit
-// tested. The renderer (mechanics.tsx) is a thin shell over these.
+// tested. The renderer (Brain Booster's mechanics.tsx) is a thin shell over it.
 // ---------------------------------------------------------------------------
 
 const rand = (k: number) => Math.floor(Math.random() * k)

@@ -26,7 +26,7 @@ CREATE INDEX IF NOT EXISTS idx_activity_templates_tier ON activity_templates (mi
 -- One aggregated row per (child, activity): what they did with it. The client
 -- mirrors this locally; the server row is the cross-device source of truth.
 CREATE TABLE IF NOT EXISTS activity_history (
-  user_id       BIGINT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  user_id       UUID   NOT NULL REFERENCES users(id) ON DELETE CASCADE,
   activity_id   TEXT   NOT NULL,
   plays         INT    NOT NULL DEFAULT 0,
   completed     INT    NOT NULL DEFAULT 0,
@@ -44,7 +44,7 @@ CREATE INDEX IF NOT EXISTS idx_activity_history_recent ON activity_history (user
 -- Append-only event log (optional, for analytics / personalisation training).
 CREATE TABLE IF NOT EXISTS activity_events (
   id           BIGSERIAL PRIMARY KEY,
-  user_id      BIGINT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  user_id      UUID   NOT NULL REFERENCES users(id) ON DELETE CASCADE,
   activity_id  TEXT   NOT NULL,
   mechanic     TEXT,
   outcome      TEXT   NOT NULL,             -- 'completed' | 'skipped'

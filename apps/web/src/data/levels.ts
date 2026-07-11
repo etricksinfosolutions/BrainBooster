@@ -54,7 +54,7 @@ const KIND_META: Record<GameKind, { title: string; skill: Skill }> = {
   'spell':           { title: 'Spell It!', skill: 'language' },
   'opposites':       { title: 'Opposite Day', skill: 'language' },
   'riddle':          { title: 'Riddle Time', skill: 'logic' },
-  'story':           { title: 'Story Corner', skill: 'language' },
+  'story':           { title: 'Fill the Colors', skill: 'observation' },
   'quick-tap':       { title: 'Fruit Frenzy (30s)', skill: 'speed' },
   'quick-count':     { title: 'Star Counter (30s)', skill: 'speed' },
 }

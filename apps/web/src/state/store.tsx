@@ -8,7 +8,7 @@ import { LEVELS, LevelDef, RewardResult, Skill, SkillMap, computeReward } from '
 import { PRAISE, ENCOURAGE } from '../data/content'
 import { Lang, StringKey, translate } from '../i18n'
 import { narrate } from './narrator'
-import { pickActivity } from '../activities/scheduler'
+import { pickActivity, specForActivityId } from '../activities/scheduler'
 import { ActivitySpec, ActivityLog } from '../activities/types'
 
 // --- Types -------------------------------------------------------------------
@@ -23,6 +23,8 @@ export interface Settings {
   sfxVolume: number       // 0..1
   colorBlind: boolean
   bigButtons: boolean
+  reducedMotion: boolean   // a11y: suppress non-essential animation/transition
+  highContrast: boolean    // a11y: stronger text/border/background contrast
   language: Lang
 }
 
@@ -49,11 +51,13 @@ export interface Profile {
   spinDate: string
   gemUnlocked: number                     // highest level unlocked by spending diamonds
   seenQuestions: string[]                  // ids of questions already answered (no-repeat engine)
+  seenFacts: string[]                      // titles of "Did you know?" facts already shown (never repeat)
   factIndex: number                        // how many "Did you know?" facts unlocked
   lastWorldId: string                      // last world visited → cinematic intro plays on change
   activityLog: ActivityLog                 // User Activity Mapping — per-activity history
   recentActivities: string[]               // most-recent-first activity ids (no-repeat window)
   recentMechanics: string[]                // most-recent-first mechanics (no back-to-back)
+  activityByLevel: Record<number, string>  // pinned activity id per COMPLETED level — same challenge on replay
 }
 
 export interface State {
@@ -66,9 +70,17 @@ export interface State {
   adBreak: boolean
 }
 
-/** Wraps the scheduler so a content hiccup can never break starting a level. */
+/** Wraps the scheduler so a content hiccup can never break starting a level.
+ *  A level the child has ALREADY completed replays its PINNED activity (so the
+ *  same challenge kind reappears from the map); only brand-new levels are freshly
+ *  scheduled. Falls back to a fresh pick if the pinned activity ever disappears. */
 function scheduleActivity(level: LevelDef, p: Profile): ActivitySpec | null {
   try {
+    const pinnedId = p.activityByLevel?.[level.id]
+    if (pinnedId) {
+      const pinned = specForActivityId(level, pinnedId)
+      if (pinned) return pinned
+    }
     return pickActivity(level, {
       recentActivities: p.recentActivities, recentMechanics: p.recentMechanics,
       activityLog: p.activityLog, skills: p.skills,
@@ -108,6 +120,8 @@ export function unlockCost(level: LevelDef): number { return 2 + level.tierIndex
 
 /** Coins to reveal one hint. */
 export const HINT_COST = 25
+/** Coins to skip the current challenge and move straight to the next level. */
+export const SKIP_COST = 100
 
 const defaultProfile: Profile = {
   name: 'Champ', avatar: '🦊', hat: '—',
@@ -115,13 +129,32 @@ const defaultProfile: Profile = {
   coins: 50, diamonds: 0, xp: 0, premium: false,
   starsByLevel: {}, badges: [], streak: 0, lastPlayedDate: '',
   skills: {}, days: [], gamesSinceAd: 0, dailyBonusDate: '', spinDate: '', gemUnlocked: 0,
-  seenQuestions: [], factIndex: 0, lastWorldId: '',
-  activityLog: {}, recentActivities: [], recentMechanics: [],
+  seenQuestions: [], seenFacts: [], factIndex: 0, lastWorldId: '',
+  activityLog: {}, recentActivities: [], recentMechanics: [], activityByLevel: {},
 }
+
+// Configurable audio-mix defaults (#4) — background music is now clearly present
+// while sound effects stay crisp on top. User volume settings still override these.
+export const AUDIO_DEFAULTS = { musicVolume: 0.85, sfxVolume: 0.9 } as const
 
 const defaultSettings: Settings = {
   sound: true, music: true, voice: true, celebration: true, notifications: true,
-  musicVolume: 0.55, sfxVolume: 0.9, colorBlind: false, bigButtons: false, language: 'en',
+  musicVolume: AUDIO_DEFAULTS.musicVolume, sfxVolume: AUDIO_DEFAULTS.sfxVolume, colorBlind: false, bigButtons: false,
+  reducedMotion: false, highContrast: false, language: 'en',
+}
+
+/**
+ * Accessibility shell classes derived from user settings. Kept a pure function
+ * (no DOM) so it is unit-testable and reused by the app shell. `reducedMotion`
+ * and `highContrast` were declared in the engine's AccessibilityConfig but never
+ * consumed by a renderer (see docs/launch/ACCESSIBILITY_AUDIT.md, Gap A1); this
+ * wires them for the web player. The CSS also honours the OS
+ * `prefers-reduced-motion` media query, so the toggle is an explicit opt-in on
+ * top of the system preference.
+ */
+export function accessibilityClass(settings: Pick<Settings, 'reducedMotion' | 'highContrast'>): string {
+  return [settings.reducedMotion && 'reduced-motion', settings.highContrast && 'high-contrast']
+    .filter(Boolean).join(' ')
 }
 
 // --- Actions -------------------------------------------------------------------
@@ -144,6 +177,8 @@ type Action =
   | { type: 'buy-premium' }
   | { type: 'visit-world'; worldId: string }
   | { type: 'skip-activity' }
+  | { type: 'skip-challenge'; level: LevelDef }
+  | { type: 'mark-fact-seen'; key: string }
 
 const BADGE_FOR: Record<string, (l: LevelDef) => string | null> = {
   badge: l => `Star Scout · Level ${l.id}`,
@@ -180,6 +215,33 @@ function reducer(state: State, action: Action): State {
         recentMechanics: [act.mechanic, ...p.recentMechanics].slice(0, 8),
       } }
     }
+    case 'skip-challenge': {
+      // Pay coins to skip a challenge and jump straight to the next level. The
+      // skipped level is credited a single star (just enough to unlock the next
+      // one) so the adventure keeps moving; the child can always replay it later
+      // for the full reward. No-op if they can't afford it.
+      if (p.coins < SKIP_COST) return state
+      const level = action.level
+      const act = state.activeActivity
+      const prevStars = p.starsByLevel[level.id] ?? 0
+      let activityLog = p.activityLog, recentActivities = p.recentActivities, recentMechanics = p.recentMechanics
+      let activityByLevel = p.activityByLevel
+      if (act) {
+        const rec = activityLog[act.activityId] ?? EMPTY_ACTIVITY
+        activityLog = { ...activityLog, [act.activityId]: { ...rec, skips: rec.skips + 1, ts: dayIndex() } }
+        recentActivities = [act.activityId, ...recentActivities].slice(0, 24)
+        recentMechanics = [act.mechanic, ...recentMechanics].slice(0, 8)
+        activityByLevel = { ...activityByLevel, [level.id]: act.activityId }
+      }
+      const skipped: Profile = {
+        ...p, coins: p.coins - SKIP_COST,
+        starsByLevel: { ...p.starsByLevel, [level.id]: Math.max(prevStars, 1) },
+        activityLog, recentActivities, recentMechanics, activityByLevel,
+      }
+      // Advance to the next level (clamped to the catalogue) and start playing it.
+      const next = LEVELS.find(l => l.id === level.id + 1) ?? level
+      return { ...state, profile: skipped, activeLevel: next, activeActivity: scheduleActivity(next, skipped), screen: 'play' }
+    }
     case 'complete-level': {
       const { level, accuracy, seconds, hintsUsed = 0, seenIds } = action
       const act = state.activeActivity
@@ -209,6 +271,11 @@ function reducer(state: State, action: Action): State {
         recentActivities = [act.activityId, ...recentActivities].slice(0, 24)
         recentMechanics = [act.mechanic, ...recentMechanics].slice(0, 8)
       }
+      // Pin the activity this level was cleared with, so revisiting it from the
+      // adventure map always replays the SAME challenge kind (never re-rolled).
+      const activityByLevel = act
+        ? { ...p.activityByLevel, [level.id]: act.activityId }
+        : p.activityByLevel
       const badgeMaker = level.milestone ? BADGE_FOR[level.milestone] : undefined
       const newBadge = badgeMaker ? badgeMaker(level) : null
       const yesterday = new Date(Date.now() - 864e5).toISOString().slice(0, 10)
@@ -234,7 +301,7 @@ function reducer(state: State, action: Action): State {
           gamesSinceAd: gamesSinceAd >= 3 ? 0 : gamesSinceAd,
           seenQuestions,
           factIndex: p.factIndex + 1,
-          activityLog, recentActivities, recentMechanics,
+          activityLog, recentActivities, recentMechanics, activityByLevel,
         },
       }
     }
@@ -271,6 +338,11 @@ function reducer(state: State, action: Action): State {
     case 'wear-avatar': return p.ownedAvatars.includes(action.item) ? { ...state, profile: { ...p, avatar: action.item } } : state
     case 'wear-hat': return p.ownedHats.includes(action.item) ? { ...state, profile: { ...p, hat: action.item } } : state
     case 'set-setting': return { ...state, settings: { ...state.settings, [action.key]: action.value } }
+    case 'mark-fact-seen': {
+      const seen = state.profile.seenFacts ?? []
+      if (seen.includes(action.key)) return state
+      return { ...state, profile: { ...state.profile, seenFacts: [...seen, action.key].slice(-1000) } }
+    }
     case 'set-name': return { ...state, profile: { ...p, name: action.name.slice(0, 14) } }
     case 'claim-daily': {
       if (p.dailyBonusDate === today()) return state
@@ -313,7 +385,7 @@ function getCtx(): AudioContext | null {
 
 // Sound effects share one bus so a single SFX-volume knob controls them all.
 let sfxBus: GainNode | null = null
-let sfxVol = 0.9
+let sfxVol: number = AUDIO_DEFAULTS.sfxVolume
 function getSfxBus(c: AudioContext): GainNode {
   if (!sfxBus) { sfxBus = c.createGain(); sfxBus.gain.value = sfxVol; sfxBus.connect(c.destination) }
   return sfxBus
@@ -338,9 +410,22 @@ function tone(freq: number, dur = 0.12, type: OscillatorType = 'sine', when = 0,
 export const sfx = {
   tap: () => tone(520, 0.06, 'triangle'),
   good: () => { tone(660, 0.1, 'sine'); tone(880, 0.12, 'sine', 0.09); tone(1320, 0.16, 'sine', 0.2) },
-  bad: () => tone(200, 0.2, 'sawtooth', 0, 0.04),
+  // A clear "invalid" buzzer — two quick descending tones so a wrong tap is unmistakable.
+  bad: () => { tone(240, 0.14, 'sawtooth', 0, 0.05); tone(160, 0.2, 'sawtooth', 0.12, 0.05) },
   coin: () => { tone(988, 0.07, 'square', 0, 0.05); tone(1319, 0.12, 'square', 0.07, 0.05) },
   fanfare: () => [523, 659, 784, 1047, 1319].forEach((f, i) => tone(f, 0.18, 'triangle', i * 0.11, 0.07)),
+}
+
+// Haptics — a short device vibration so a wrong answer is FELT as well as heard
+// (works in the Android WebView / Capacitor and on the mobile web; a no-op where
+// the Vibration API is absent). Deliberately independent of the sound setting so
+// the "that's not right" cue still reaches a child who has muted the game.
+export const haptics = {
+  // A short ~30ms tick on a wrong answer so a child FEELS the mistake (#7). Fires in
+  // sync with the invalid sound + visual shake; gated by the caller's sound setting.
+  wrong: () => { try { navigator.vibrate?.(30) } catch { /* unsupported */ } },
+  tap: () => { try { navigator.vibrate?.(12) } catch { /* unsupported */ } },
+  win: () => { try { navigator.vibrate?.([0, 30, 40, 30, 40, 60]) } catch { /* unsupported */ } },
 }
 
 // --- Adventure music — a distinct ambient theme per world, crossfaded ------------
@@ -388,7 +473,7 @@ let fade: GainNode | null = null     // start/stop envelope
 let busA: GainNode | null = null
 let busB: GainNode | null = null
 let activeBus: 'A' | 'B' = 'A'
-let musicVol = 0.55
+let musicVol: number = AUDIO_DEFAULTS.musicVolume
 let musicTimer: ReturnType<typeof setTimeout> | null = null
 let musicOn = false
 let musicStep = 0

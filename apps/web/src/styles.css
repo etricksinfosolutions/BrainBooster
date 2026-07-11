@@ -44,8 +44,12 @@ button:disabled { cursor: not-allowed; opacity: 0.55; }
 button:focus-visible, input:focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; }
 
 .app-shell { position: relative; z-index: 1; max-width: 560px; margin: 0 auto; padding: 12px 16px 92px; }
-.app-shell.in-game { padding-bottom: 24px; }
+/* In gameplay the shell fills the (dynamic) viewport and lays out as a column so the
+   activity can size itself to the screen — small children can't scroll, so a level
+   should fit within the phone's width AND height without a scrollbar. */
+.app-shell.in-game { padding-bottom: max(12px, env(safe-area-inset-bottom)); min-height: 100dvh; display: flex; flex-direction: column; }
 .screen { position: relative; z-index: 1; display: flex; flex-direction: column; gap: 14px; animation: screen-in 0.34s ease; }
+.screen.play { flex: 1; min-height: 0; gap: 10px; }
 @keyframes screen-in { from { opacity: 0; transform: translateY(10px) scale(0.99); } to { opacity: 1; transform: none; } }
 
 /* --- Toy-block buttons (signature) -------------------------------------- */
@@ -151,7 +155,7 @@ button:focus-visible, input:focus-visible { outline: 3px solid var(--blue); outl
   display: inline-flex; align-items: center; justify-content: center;
   font-size: 22px; line-height: 1; border-radius: 50%;
 }
-.game-area { display: flex; flex-direction: column; gap: 12px; }
+.game-area { display: flex; flex-direction: column; gap: 12px; flex: 1; min-height: 0; }
 .game-hint { text-align: center; font-weight: 700; margin: 2px 0; }
 .game-meta { text-align: center; color: var(--ink-soft); font-size: 0.88rem; margin: 0; }
 
@@ -253,10 +257,14 @@ button:focus-visible, input:focus-visible { outline: 3px solid var(--blue); outl
 
 /* quick tap */
 .tap-field {
-  position: relative; height: 340px; background: var(--card);
+  position: relative; flex: 1; min-height: 300px; background: var(--card);
   border-radius: var(--radius); box-shadow: var(--shadow-card); overflow: hidden;
 }
-.tap-item { position: absolute; font-size: 2.5rem; animation: pop 0.25s ease; padding: 6px; }
+/* Big, easy-to-hit fruit for small fingers. */
+.tap-item {
+  position: absolute; font-size: 3rem; animation: pop 0.25s ease; padding: 6px;
+  min-width: 68px; min-height: 68px; display: grid; place-items: center;
+}
 
 /* --- Reward ------------------------------------------------------------------------------ */
 .reward-screen { align-items: center; justify-content: center; min-height: 78vh; position: relative; }
@@ -749,8 +757,8 @@ button:focus-visible, input:focus-visible { outline: 3px solid var(--blue); outl
 .shadow-target { font-size: 5.6rem; }
 .flag-big { font-size: 4.6rem; }
 .count-field { font-size: 2.3rem; }
-.tap-item { font-size: 2.8rem; min-width: 52px; min-height: 52px; }
-.tap-field { height: 44vh; min-height: 300px; }
+.tap-item { font-size: 3.4rem; min-width: 76px; min-height: 76px; }
+.tap-field { flex: 1; min-height: 340px; }
 .simon-pad { font-size: 2.6rem; }
 .pattern-row { font-size: 2.5rem; }
 
@@ -770,7 +778,7 @@ button:focus-visible, input:focus-visible { outline: 3px solid var(--blue); outl
   .app-shell { max-width: 900px; padding-bottom: 72px; }
   .memory-grid { max-width: 620px; margin: 0 auto; }
   .options-grid { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); }
-  .tap-field { height: 62vh; }
+  .tap-field { flex: 1; min-height: 420px; }
   .home-hero .hero-title { font-size: 1.5rem; }
 }
 
@@ -1259,18 +1267,24 @@ button:focus-visible, input:focus-visible { outline: 3px solid var(--blue); outl
 .maze-pad > div { display: flex; gap: 6px; }
 .maze-pad .btn { min-width: 60px; font-size: 1.3rem; padding: 8px 14px; }
 
-/* --- Spot the difference ---------------------------------------------------- */
+/* --- Spot the difference ----------------------------------------------------
+   The two picture grids share the available height (flex + 1fr rows) so the whole
+   activity — title, hint, both grids — fits within the screen without scrolling,
+   and each tile's image fills ~90% of its cell so it's big and easy to compare. */
 .diff-grid {
-  display: grid; gap: 6px; max-width: 320px; width: 100%; margin: 0 auto;
-  background: var(--card); border-radius: var(--radius); padding: 10px; box-shadow: var(--shadow-card);
+  display: grid; gap: 6px; max-width: min(100%, 420px); width: 100%; margin: 0 auto;
+  grid-template-rows: repeat(3, 1fr);
+  flex: 1 1 0; min-height: 0;
+  background: var(--card); border-radius: var(--radius); padding: 8px; box-shadow: var(--shadow-card);
 }
 .diff-cell {
-  aspect-ratio: 1; border-radius: 10px; background: var(--sky); box-shadow: 0 3px 0 var(--sky-deep);
-  display: flex; align-items: center; justify-content: center;
+  min-height: 0; border-radius: 10px; background: var(--sky); box-shadow: 0 3px 0 var(--sky-deep);
+  display: flex; align-items: center; justify-content: center; padding: 5%;
 }
 .diff-cell:active { transform: translateY(2px); }
 .diff-cell.is-found { background: #eafaf3; outline: 3px solid var(--mint); animation: pop 0.3s; }
-.diff-divider { text-align: center; font-weight: 900; color: var(--ink-soft); letter-spacing: 0.1em; }
+.diff-cell .sprite-fill { width: 100%; height: 100%; }
+.diff-divider { text-align: center; font-weight: 900; color: var(--ink-soft); letter-spacing: 0.1em; margin: 0; }
 
 /* --- Sliding puzzle --------------------------------------------------------- */
 .slide-board {
@@ -1302,4 +1316,170 @@ button:focus-visible, input:focus-visible { outline: 3px solid var(--blue); outl
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
   .decor, .party-pop { display: none; }
+}
+
+/* ---------------------------------------------------------------------------
+   Accessibility opt-ins (Settings → Accessibility). These are explicit user
+   toggles layered on top of the OS `prefers-reduced-motion` media query, so a
+   child on a device without the system setting can still get a calmer screen
+   or higher contrast. Wired from state/store.tsx `accessibilityClass()`.
+--------------------------------------------------------------------------- */
+
+/* Reduce motion: neutralise non-essential animation & transition app-wide, and
+   stop decorative floaties. Keeps opacity fades near-instant so nothing "flies". */
+.app-shell.reduced-motion *,
+.app-shell.reduced-motion *::before,
+.app-shell.reduced-motion *::after {
+  animation-duration: 0.001ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.001ms !important;
+  scroll-behavior: auto !important;
+}
+.app-shell.reduced-motion .decor,
+.app-shell.reduced-motion .floaty { display: none !important; }
+
+/* High contrast: darken ink, strengthen borders and card separation so text
+   and interactive targets read clearly against the soft pastel palette. */
+.app-shell.high-contrast {
+  --ink: #14101f;
+  --ink-soft: #2c2440;
+  --card: #ffffff;
+  --sky: #ffffff;
+  --sky-deep: #f0eef8;
+}
+.app-shell.high-contrast .btn,
+.app-shell.high-contrast .option-btn,
+.app-shell.high-contrast .card,
+.app-shell.high-contrast .toggle-row {
+  border: 2px solid var(--ink) !important;
+}
+.app-shell.high-contrast .option-btn:focus-visible,
+.app-shell.high-contrast .btn:focus-visible,
+.app-shell.high-contrast a:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 2px;
+}
+
+/* --- Launch splash (one screen, two phases) ---------------------------------
+   Phase 1: "eTricks Games presents…" (studio logo). Phase 2: the Brain Booster
+   game logo. A single animated sequence on a deep, kid-friendly brand gradient,
+   with colourful rays swirling and dots twinkling. Each logo springs in with a
+   bouncy pop and keeps a gentle float. */
+.launch {
+  position: fixed; inset: 0; z-index: 9999; display: grid; place-items: center; overflow: hidden;
+  background: radial-gradient(circle at 50% 40%, #4331a4 0%, #2a1e70 52%, #140f38 100%);
+  animation: launch-in 0.35s ease both;
+}
+.launch.is-leaving { opacity: 0; transform: scale(1.05); transition: opacity 0.55s ease, transform 0.55s ease; }
+@keyframes launch-in { from { opacity: 0; } to { opacity: 1; } }
+
+.launch-rays {
+  position: absolute; width: 132vmin; height: 132vmin; border-radius: 50%;
+  background: conic-gradient(from 0deg,
+    #ffcf3355, #ff5aa755, #38c6ff55, #8cf05a55, #a06bff55, #ff8a3d55, #ffcf3355);
+  filter: blur(36px); opacity: 0.5; animation: launch-rays-spin 13s linear infinite;
+}
+@keyframes launch-rays-spin { to { transform: rotate(360deg); } }
+
+/* The stage fills the screen and centres the logo dead-centre; the "presents"
+   text is positioned absolutely below so it never pushes the logo off-centre. */
+.launch-stage {
+  position: absolute; inset: 0; z-index: 2;
+  display: flex; align-items: center; justify-content: center;
+}
+
+.launch-logo {
+  height: auto; max-height: 70vh; object-fit: contain;
+  filter: drop-shadow(0 16px 40px rgba(0, 0, 0, 0.45));
+  animation: launch-logo-pop 0.7s cubic-bezier(0.2, 0.9, 0.3, 1.35) both,
+             launch-logo-float 3.2s ease-in-out 0.75s infinite;
+}
+.launch-logo.eg { width: min(64vw, 380px); }
+.launch-logo.bb { width: min(82vw, 460px); }
+@keyframes launch-logo-pop {
+  0% { transform: scale(0.3) rotate(-9deg); opacity: 0; }
+  55% { transform: scale(1.08) rotate(3deg); opacity: 1; }
+  75% { transform: scale(0.97) rotate(-1.5deg); }
+  100% { transform: scale(1) rotate(0); opacity: 1; }
+}
+@keyframes launch-logo-float {
+  0%, 100% { transform: translateY(0) rotate(0); }
+  50% { transform: translateY(-10px) rotate(1.2deg); }
+}
+
+.launch-presents {
+  position: absolute; left: 50%; top: 66%; transform: translateX(-50%);
+  z-index: 3; white-space: nowrap; text-align: center;
+  color: #fff; font-weight: 800; font-size: clamp(1.1rem, 5vw, 1.6rem); letter-spacing: 0.04em;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4); opacity: 0;
+  animation: launch-presents-in 0.5s ease 0.7s both;
+}
+@keyframes launch-presents-in { from { opacity: 0; } to { opacity: 0.95; } }
+
+.launch-sparkles span {
+  position: absolute; left: 50%; top: 50%; width: 15px; height: 15px; border-radius: 50%;
+  --a: calc(var(--i) * 22.5deg); --r: 40vmin;
+  transform: rotate(var(--a)) translate(var(--r));
+  box-shadow: 0 0 12px 2px currentColor; color: #ffcf33; background: currentColor;
+  animation: launch-twinkle 1.7s ease-in-out infinite; animation-delay: calc(var(--i) * 0.08s);
+}
+.launch-sparkles span:nth-child(4n+1) { color: #ffcf33; }
+.launch-sparkles span:nth-child(4n+2) { color: #ff5aa7; }
+.launch-sparkles span:nth-child(4n+3) { color: #38c6ff; }
+.launch-sparkles span:nth-child(4n+4) { color: #8cf05a; }
+@keyframes launch-twinkle { 0%, 100% { opacity: 0.15; } 50% { opacity: 1; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .launch-logo { animation: launch-logo-pop 0.4s ease both; }
+  .launch-rays { animation: none; }
+  .launch-sparkles span { animation: none; opacity: 0.7; }
+  .launch-presents { animation: launch-presents-in 0.3s ease both; }
+}
+
+/* --- Play header (#9): avatar · level number · level name ------------------- */
+.play-head { display: flex; align-items: center; gap: 12px; padding: 4px 2px 8px; position: relative; z-index: 1; }
+.play-avatar {
+  width: 46px; height: 46px; border-radius: 50%; background: var(--card); box-shadow: var(--shadow-card);
+  display: grid; place-items: center; flex: 0 0 auto; transition: transform .12s ease;
+}
+.play-avatar:active { transform: scale(0.94); }
+.play-head-title { flex: 1; min-width: 0; text-align: center; display: flex; flex-direction: column; line-height: 1.12; }
+.play-head-title strong { font-size: 1.15rem; font-weight: 900; color: var(--ink); }
+.play-head-title span { font-size: 0.9rem; color: var(--ink-soft); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.play-head-spacer { flex: 0 0 46px; }   /* mirrors the avatar so the title stays centred */
+.play-dark .play-head-title strong { color: #fff; }
+.play-dark .play-head-title span { color: rgba(255, 255, 255, 0.86); }
+
+/* --- Bottom action bar (#8): icon-only Back · Hint · Reset ------------------ */
+.play-actionbar {
+  display: flex; justify-content: space-around; align-items: center; gap: 8px;
+  margin-top: 10px; padding: 8px 6px calc(6px + env(safe-area-inset-bottom));
+  position: relative; z-index: 2;
+}
+.pab-btn {
+  width: 56px; height: 56px; border-radius: 50%; display: grid; place-items: center;
+  color: var(--ink); background: var(--card); box-shadow: 0 3px 10px rgba(30, 20, 60, 0.14);
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+.pab-btn:active { transform: translateY(2px); box-shadow: 0 1px 4px rgba(30, 20, 60, 0.16); }
+.pab-btn:focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; }
+.play-dark .pab-btn { background: rgba(255, 255, 255, 0.16); color: #fff; }
+.big-buttons .pab-btn { width: 66px; height: 66px; }
+.reduced-motion .pab-btn, .reduced-motion .play-avatar { transition: none; }
+/* Coin-price badge on the Hint / Skip buttons (25🪙 / 100🪙). */
+.pab-btn.has-cost { position: relative; overflow: visible; }
+.pab-cost {
+  position: absolute; bottom: -6px; left: 50%; transform: translateX(-50%);
+  display: inline-flex; align-items: center; gap: 2px; white-space: nowrap;
+  background: var(--mango, #ffb43a); color: #3a2415; font-weight: 800; font-size: 0.66rem;
+  line-height: 1; padding: 3px 6px; border-radius: 999px; box-shadow: 0 2px 5px rgba(30, 20, 60, 0.2);
+}
+.pab-cost.is-broke { background: #d9d0e6; color: #6a5a86; opacity: 0.85; }
+.play-dark .pab-cost { box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35); }
+/* Reward-screen completion actions (Retake · Next + countdown). */
+.reward-actions { display: flex; gap: 10px; width: 100%; justify-content: center; flex-wrap: wrap; }
+.reward-actions .btn-big { flex: 1 1 0; min-width: 132px; }
+.reward-count {
+  display: inline-grid; place-items: center; min-width: 1.5em; height: 1.5em; margin-left: 4px;
+  padding: 0 4px; border-radius: 999px; background: rgba(255, 255, 255, 0.28); font-weight: 800; font-size: 0.85em;
 }
