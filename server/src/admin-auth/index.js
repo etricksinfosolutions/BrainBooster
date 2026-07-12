@@ -16,8 +16,11 @@ const { SessionService } = require('./session.service');
 const { LoginThrottleService } = require('./throttle.service');
 const { AuditService } = require('./audit.service');
 const { AuthService } = require('./auth.service');
+const { TenantService } = require('./tenant.service');
+const { InMemoryTenantProvider } = require('./tenant.provider');
 const { makeGuards } = require('./guards');
 const { createAuthRouter } = require('./auth.controller');
+const { createTenantRouter } = require('./tenant.controller');
 
 /**
  * @param {{ silentAudit?: boolean, userProvider?: object, now?: () => number }} [opts]
@@ -42,14 +45,27 @@ function createAdminAuth(opts = {}) {
   const guards = makeGuards(authService, auditService);
   const router = createAuthRouter({ authService, auditService, guards });
 
+  // Tenant management (SUPER_ADMIN only) shares the hasher + audit trail.
+  const tenantProvider = opts.tenantProvider || new InMemoryTenantProvider();
+  const tenantService = new TenantService({
+    tenantProvider,
+    passwordHasher,
+    auditService,
+    now: opts.now,
+  });
+  const tenantRouter = createTenantRouter({ tenantService, guards });
+
   return {
     router,
+    tenantRouter,
     authService,
+    tenantService,
     auditService,
     sessionService,
     captchaService,
     throttleService,
     userProvider,
+    tenantProvider,
     passwordHasher,
     guards,
   };

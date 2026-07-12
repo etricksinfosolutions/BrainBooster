@@ -61,6 +61,8 @@ app.use('/api/activities', activityRoutes);
 
 // Admin portal auth (captcha/login/logout/me/refresh/audit-logs).
 app.use('/api/admin/auth', adminAuth.router);
+// Tenant management (SUPER_ADMIN only).
+app.use('/api/admin/tenants', adminAuth.tenantRouter);
 
 app.use('/api/auth', authRoutes);
 app.use('/api/progress', progressRoutes);

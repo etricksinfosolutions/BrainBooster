@@ -14,6 +14,7 @@ export type Permission =
   | 'AI_CONFIGURATION'
   | 'SYSTEM_MAINTENANCE'
   | 'AUDIT_LOGS'
+  | 'TENANT_MANAGEMENT'
   | 'DASHBOARD'
   | 'REPORTS'
 
@@ -40,6 +41,7 @@ export const PERMISSION_META: Record<Permission, { label: string; icon: string }
   FEATURE_FLAGS: { label: 'Feature Flags', icon: '🚩' },
   PLATFORM_SETTINGS: { label: 'Platform Settings', icon: '⚙️' },
   SYSTEM_MAINTENANCE: { label: 'System Maintenance', icon: '🛠️' },
+  TENANT_MANAGEMENT: { label: 'Tenants', icon: '🏢' },
   AUDIT_LOGS: { label: 'Audit Logs', icon: '🧾' },
 }
 
@@ -55,5 +57,6 @@ export const MENU_ORDER: Permission[] = [
   'FEATURE_FLAGS',
   'PLATFORM_SETTINGS',
   'SYSTEM_MAINTENANCE',
+  'TENANT_MANAGEMENT',
   'AUDIT_LOGS',
 ]

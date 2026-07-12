@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useAuth } from '../auth/AuthContext'
 import { MENU_ORDER, PERMISSION_META, type Permission } from '../auth/permissions'
 import { AuditLogPanel } from './AuditLogPanel'
+import { TenantsPanel } from './TenantsPanel'
 import { Logo } from './Logo'
 
 /** Authenticated shell: role-filtered navigation + section content. */
@@ -52,6 +53,8 @@ export function Dashboard() {
         <section className="content">
           {active === 'AUDIT_LOGS' ? (
             <AuditLogPanel />
+          ) : active === 'TENANT_MANAGEMENT' ? (
+            <TenantsPanel />
           ) : active === 'DASHBOARD' ? (
             <div className="panel">
               <h2>Welcome, {user.username}</h2>
