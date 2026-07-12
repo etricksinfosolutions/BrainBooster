@@ -31,6 +31,10 @@ app.disable('x-powered-by');
 // Behind a reverse proxy (Docker/nginx) so X-Forwarded-* is honored for client IPs.
 app.set('trust proxy', 1);
 app.use(helmet());
+// Content-config accepts uploaded images/GIFs as data: URIs → larger JSON limit
+// on that mount only; every other route keeps the tight 100kb cap. This parser
+// runs first for its path, so the global one below skips the already-parsed body.
+app.use('/api/admin/content', express.json({ limit: '8mb' }));
 app.use(express.json({ limit: '100kb' }));
 app.use(cookieParser());
 
@@ -63,6 +67,14 @@ adminAuth.seedWebAppClient().catch((e) => console.error('web-app client seed fai
 
 // Game data APIs — now require a valid OAuth Bearer token (client credentials).
 // The web app obtains one from /api/oauth/token and sends it on every request.
+// Per-level activity overrides + asset overrides are served here (bearer-gated)
+// so the web app can apply them at runtime.
+app.get('/api/content/level-activities', adminAuth.requireBearer({ scope: 'content' }), (_req, res) => {
+  res.json({ assignments: adminAuth.levelActivityService.assignments() });
+});
+app.get('/api/content/asset-overrides', adminAuth.requireBearer({ scope: 'content' }), (_req, res) => {
+  res.json({ overrides: adminAuth.assetsService.overrides() });
+});
 app.use('/api/content', adminAuth.requireBearer({ scope: 'content' }), contentRoutes);
 app.use('/api/activities', adminAuth.requireBearer({ scope: 'activities' }), activityRoutes);
 
@@ -70,6 +82,8 @@ app.use('/api/activities', adminAuth.requireBearer({ scope: 'activities' }), act
 app.use('/api/admin/auth', adminAuth.router);
 // Tenant management (SUPER_ADMIN only).
 app.use('/api/admin/tenants', adminAuth.tenantRouter);
+// Content config: per-level activity, fun facts, activity assets.
+app.use('/api/admin/content', adminAuth.contentConfigRouter);
 
 app.use('/api/auth', authRoutes);
 app.use('/api/progress', progressRoutes);

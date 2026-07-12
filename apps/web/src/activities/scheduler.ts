@@ -104,7 +104,23 @@ export function specForActivityId(level: LevelDef, activityId: string): Activity
   return toSpec(type, level, tags)
 }
 
+// Admin-pinned level → activity overrides (from /api/content/level-activities).
+// When a level is pinned, ONLY that activity runs there — see setLevelActivities.
+let LEVEL_ACTIVITY_OVERRIDES: Record<number, string> = {}
+
+/** Replace the per-level activity overrides (called by contentService at load). */
+export function setLevelActivities(map: Record<number, string> | null | undefined): void {
+  LEVEL_ACTIVITY_OVERRIDES = map && typeof map === 'object' ? map : {}
+}
+
 export function pickActivity(level: LevelDef, ctx: ScheduleContext): ActivitySpec {
+  // (0) Admin override: a pinned activity always wins, when it resolves.
+  const pinned = LEVEL_ACTIVITY_OVERRIDES[level.id]
+  if (pinned) {
+    const spec = specForActivityId(level, pinned)
+    if (spec) return spec
+  }
+
   const tier = level.tierIndex
   const tags = themeFor(worldForLevel(level.id)).tags
   const all = ACTIVITY_TYPES()

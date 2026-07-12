@@ -3,6 +3,9 @@ import { useAuth } from '../auth/AuthContext'
 import { MENU_ORDER, PERMISSION_META, type Permission } from '../auth/permissions'
 import { AuditLogPanel } from './AuditLogPanel'
 import { TenantsPanel } from './TenantsPanel'
+import { LevelActivityPanel } from './LevelActivityPanel'
+import { FunFactsPanel } from './FunFactsPanel'
+import { AssetsPanel } from './AssetsPanel'
 import { Logo } from './Logo'
 
 /** Authenticated shell: role-filtered navigation + section content. */
@@ -55,6 +58,12 @@ export function Dashboard() {
             <AuditLogPanel />
           ) : active === 'TENANT_MANAGEMENT' ? (
             <TenantsPanel />
+          ) : active === 'LEVEL_ACTIVITY' ? (
+            <LevelActivityPanel />
+          ) : active === 'FUN_FACTS' ? (
+            <FunFactsPanel />
+          ) : active === 'ASSET_MANAGEMENT' ? (
+            <AssetsPanel />
           ) : active === 'DASHBOARD' ? (
             <div className="panel">
               <h2>Welcome, {user.username}</h2>

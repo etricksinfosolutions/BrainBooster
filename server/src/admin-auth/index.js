@@ -24,6 +24,10 @@ const { makeBearerGuard } = require('./bearer.guard');
 const { createAuthRouter } = require('./auth.controller');
 const { createTenantRouter } = require('./tenant.controller');
 const { createOAuthRouter } = require('./oauth.controller');
+const { LevelActivityService } = require('./content-config/level-activity.service');
+const { FunFactsService } = require('./content-config/fun-facts.service');
+const { AssetsService } = require('./content-config/assets.service');
+const { createContentConfigRouter } = require('./content-config/controller');
 const { config } = require('./config');
 
 /**
@@ -69,6 +73,15 @@ function createAdminAuth(opts = {}) {
   const oauthRouter = createOAuthRouter({ oauthService });
   const requireBearer = makeBearerGuard(oauthService);
 
+  // Content configuration: per-level activity, fun facts, activity assets.
+  const levelActivityService = new LevelActivityService({ auditService, now: opts.now });
+  const funFactsService = new FunFactsService({ auditService, now: opts.now });
+  const assetsService = new AssetsService({ auditService, now: opts.now });
+  const contentConfigRouter = createContentConfigRouter({
+    services: { levelActivity: levelActivityService, funFacts: funFactsService, assets: assetsService },
+    guards,
+  });
+
   // Idempotently seed the web-app client so the browser build can obtain tokens.
   async function seedWebAppClient() {
     const w = config.webAppClient;
@@ -86,11 +99,15 @@ function createAdminAuth(opts = {}) {
     router,
     tenantRouter,
     oauthRouter,
+    contentConfigRouter,
     requireBearer,
     seedWebAppClient,
     oauthService,
     authService,
     tenantService,
+    levelActivityService,
+    funFactsService,
+    assetsService,
     auditService,
     sessionService,
     captchaService,

@@ -19,6 +19,7 @@ import {
 } from './data/endless'
 import { ServerBranding, applyServerConfig } from './config'
 import { mergeActivityTypes } from './activities/catalog'
+import { setLevelActivities } from './activities/scheduler'
 import { setAssetSource } from './assets/engine'
 import { ActivityType } from './activities/types'
 import { authHeaders, clearTokenCache } from './apiAuth'
@@ -149,9 +150,29 @@ async function tryFetch(url: string, ms = 2000, extraHeaders: Record<string, str
   } catch { return null }
 }
 
+/** Fetches admin-pinned per-level activity overrides and applies them so pinned
+ *  levels always run the chosen activity. No-op offline / when unset. */
+export async function loadLevelActivities(): Promise<void> {
+  if (!API_BASE) return
+  try {
+    const ctrl = new AbortController()
+    const timer = setTimeout(() => ctrl.abort(), 3000)
+    const res = await fetch(`${API_BASE}/api/content/level-activities`, { signal: ctrl.signal, headers: { accept: 'application/json', ...(await authHeaders()) } })
+    clearTimeout(timer)
+    if (res.status === 401) clearTokenCache()
+    if (!res.ok) return
+    const doc = await res.json()
+    if (doc && doc.assignments) setLevelActivities(doc.assignments)
+  } catch { /* offline — keep whatever is already applied */ }
+}
+
 /** Loads content from the best available source and activates it. Resolves with
  *  which source won so the UI can surface it (e.g. an offline note). */
 export async function loadContent(): Promise<ContentSource> {
+  // Apply admin level→activity overrides in parallel (fire-and-forget; pinned
+  // levels take effect as soon as the map arrives).
+  void loadLevelActivities()
+
   // 1) live API (authoritative — reflects newly added levels immediately). Skip it
   //    entirely when the device is offline so launch never blocks on a doomed fetch
   //    (the offline APK falls straight through to bundled content — no stall).

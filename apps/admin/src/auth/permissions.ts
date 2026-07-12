@@ -15,6 +15,9 @@ export type Permission =
   | 'SYSTEM_MAINTENANCE'
   | 'AUDIT_LOGS'
   | 'TENANT_MANAGEMENT'
+  | 'LEVEL_ACTIVITY'
+  | 'FUN_FACTS'
+  | 'ASSET_MANAGEMENT'
   | 'DASHBOARD'
   | 'REPORTS'
 
@@ -34,7 +37,10 @@ export const PERMISSION_META: Record<Permission, { label: string; icon: string }
   USER_MANAGEMENT: { label: 'User Management', icon: '👥' },
   ADMIN_MANAGEMENT: { label: 'Admin Management', icon: '🛡️' },
   GAMES: { label: 'Games', icon: '🎮' },
+  LEVEL_ACTIVITY: { label: 'Level Activities', icon: '🗺️' },
   CONTENT: { label: 'Content', icon: '📚' },
+  FUN_FACTS: { label: 'Fun Facts', icon: '💡' },
+  ASSET_MANAGEMENT: { label: 'Activity Assets', icon: '🖼️' },
   ANALYTICS: { label: 'Analytics', icon: '📊' },
   REPORTS: { label: 'Reports', icon: '📈' },
   AI_CONFIGURATION: { label: 'AI Configuration', icon: '🤖' },
@@ -50,7 +56,10 @@ export const MENU_ORDER: Permission[] = [
   'USER_MANAGEMENT',
   'ADMIN_MANAGEMENT',
   'GAMES',
+  'LEVEL_ACTIVITY',
   'CONTENT',
+  'FUN_FACTS',
+  'ASSET_MANAGEMENT',
   'ANALYTICS',
   'REPORTS',
   'AI_CONFIGURATION',
