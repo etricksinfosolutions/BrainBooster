@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { contentApi, type LevelConfig } from '../auth/content'
 import { ApiError } from '../auth/api'
+import { ActivitySelect } from './ActivitySelect'
 
 /**
  * Level → Activity: levels on the left, an activity dropdown on the right.
@@ -96,15 +97,16 @@ export function LevelActivityPanel() {
           {selected != null && (
             <>
               <h3>Level {selected} <span className="la-tier-badge">{config.levels.find((l) => l.id === selected)?.tier}</span></h3>
-              <label className="field">
-                <span>Activity for this level</span>
-                <select value={choice} onChange={(e) => setChoice(e.target.value)} disabled={saving}>
-                  <option value="">— Auto (let the game choose) —</option>
-                  {config.activities.map((a) => (
-                    <option key={a.id} value={a.id}>{a.icon} {a.name} · {a.category}</option>
-                  ))}
-                </select>
-              </label>
+              <div className="field">
+                <label id="la-activity-label"><span>Activity for this level</span></label>
+                <ActivitySelect
+                  options={config.activities}
+                  value={choice}
+                  onChange={setChoice}
+                  disabled={saving}
+                  autoLabel="Auto (let the game choose)"
+                />
+              </div>
               <div className="row-actions">
                 <button className="login-button" style={{ margin: 0 }} onClick={() => void save()} disabled={saving}>
                   {saving ? 'Saving…' : 'Save'}
