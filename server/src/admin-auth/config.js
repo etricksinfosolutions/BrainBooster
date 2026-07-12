@@ -38,6 +38,24 @@ const config = {
   // Audit ring-buffer size kept in memory for the Audit Logs screen.
   auditBufferSize: intEnv('ADMIN_AUDIT_BUFFER', 1000),
 
+  // OAuth2 client-credentials (tenant clientId/secret → Bearer access token).
+  oauthSecret:
+    process.env.OAUTH_JWT_SECRET ||
+    process.env.JWT_SECRET ||
+    'dev-only-oauth-secret-change-me',
+  oauthIssuer: process.env.OAUTH_ISSUER || 'brainbooster-oauth',
+
+  // Deterministic seed client for the web app (so the browser build has stable
+  // credentials to exchange for a token). NOTE: a public SPA cannot truly hide a
+  // secret — for hardened production, proxy token issuance through a backend.
+  webAppClient: {
+    name: 'BrainBooster Web App',
+    clientId: process.env.WEBAPP_CLIENT_ID || 'webapp-brainbooster',
+    clientSecret: process.env.WEBAPP_CLIENT_SECRET || 'webapp-dev-secret-change-me',
+    scope: (process.env.WEBAPP_SCOPE || 'content,activities').split(',').map((s) => s.trim()).filter(Boolean),
+    sessionTimeMinutes: intEnv('WEBAPP_SESSION_MIN', 60),
+  },
+
   // Cookie names + flags.
   cookieName: 'bb_admin_session',
   csrfCookieName: 'bb_admin_csrf',

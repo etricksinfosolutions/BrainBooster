@@ -18,9 +18,13 @@ const { AuditService } = require('./audit.service');
 const { AuthService } = require('./auth.service');
 const { TenantService } = require('./tenant.service');
 const { InMemoryTenantProvider } = require('./tenant.provider');
+const { OAuthService } = require('./oauth.service');
 const { makeGuards } = require('./guards');
+const { makeBearerGuard } = require('./bearer.guard');
 const { createAuthRouter } = require('./auth.controller');
 const { createTenantRouter } = require('./tenant.controller');
+const { createOAuthRouter } = require('./oauth.controller');
+const { config } = require('./config');
 
 /**
  * @param {{ silentAudit?: boolean, userProvider?: object, now?: () => number }} [opts]
@@ -55,9 +59,36 @@ function createAdminAuth(opts = {}) {
   });
   const tenantRouter = createTenantRouter({ tenantService, guards });
 
+  // OAuth2 client-credentials: tenant clientId/secret -> Bearer access token.
+  const oauthService = new OAuthService({
+    tenantProvider,
+    passwordHasher,
+    auditService,
+    now: opts.now,
+  });
+  const oauthRouter = createOAuthRouter({ oauthService });
+  const requireBearer = makeBearerGuard(oauthService);
+
+  // Idempotently seed the web-app client so the browser build can obtain tokens.
+  async function seedWebAppClient() {
+    const w = config.webAppClient;
+    return tenantService.ensureSeedClient({
+      name: w.name,
+      clientId: w.clientId,
+      clientSecret: w.clientSecret,
+      scope: w.scope,
+      sessionTimeMinutes: w.sessionTimeMinutes,
+      status: 'active',
+    });
+  }
+
   return {
     router,
     tenantRouter,
+    oauthRouter,
+    requireBearer,
+    seedWebAppClient,
+    oauthService,
     authService,
     tenantService,
     auditService,

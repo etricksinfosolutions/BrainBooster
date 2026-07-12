@@ -100,6 +100,33 @@ class TenantService {
     return rows.map((t) => this.toPublic(t))
   }
 
+  /**
+   * Idempotently create a tenant with a KNOWN clientId + secret (used to seed the
+   * web-app client so the browser build has stable credentials). No-op if the
+   * clientId already exists.
+   * @param {{ name: string, clientId: string, clientSecret: string,
+   *           scope: string[], sessionTimeMinutes: number, status?: string }} seed
+   */
+  async ensureSeedClient(seed) {
+    const existing = await this.tenants.findByClientId(seed.clientId)
+    if (existing) return existing
+    const now = this._iso()
+    const record = {
+      id: crypto.randomUUID(),
+      name: seed.name,
+      clientId: seed.clientId,
+      clientSecretHash: await this.hasher.hash(seed.clientSecret),
+      sessionTimeMinutes: seed.sessionTimeMinutes,
+      status: seed.status || 'active',
+      scope: [...seed.scope],
+      createdAt: now,
+      updatedAt: now,
+    }
+    await this.tenants.create(record)
+    this._audit(TENANT_EVENTS.CREATED, record, {}, 'seed:webapp')
+    return record
+  }
+
   async get(id) {
     return this.toPublic(await this.tenants.findById(id))
   }

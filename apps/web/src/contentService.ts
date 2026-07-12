@@ -21,6 +21,7 @@ import { ServerBranding, applyServerConfig } from './config'
 import { mergeActivityTypes } from './activities/catalog'
 import { setAssetSource } from './assets/engine'
 import { ActivityType } from './activities/types'
+import { authHeaders, clearTokenCache } from './apiAuth'
 
 export interface ContentDoc {
   version: number
@@ -98,8 +99,9 @@ export async function prefetchActivities(limit = 20): Promise<number> {
     const after = Math.max(0, parseInt(localStorage.getItem(ACT_CURSOR_KEY) || '0', 10) || 0)
     const ctrl = new AbortController()
     const timer = setTimeout(() => ctrl.abort(), 4000)
-    const res = await fetch(`${API_BASE}/api/activities/batch?after=${after}&limit=${limit}`, { signal: ctrl.signal, headers: { accept: 'application/json' } })
+    const res = await fetch(`${API_BASE}/api/activities/batch?after=${after}&limit=${limit}`, { signal: ctrl.signal, headers: { accept: 'application/json', ...(await authHeaders()) } })
     clearTimeout(timer)
+    if (res.status === 401) clearTokenCache()
     const doc: any = res.ok ? await res.json() : null
     const types: ActivityType[] = doc && Array.isArray(doc.types) ? doc.types.filter((t: any) => t && t.id && t.mechanic) : []
     if (!types.length) return 0
@@ -134,12 +136,13 @@ function readCache(): ContentDoc | null {
   try { const raw = localStorage.getItem(CACHE_KEY); const d = raw && JSON.parse(raw); return isValid(d) ? d : null } catch { return null }
 }
 
-async function tryFetch(url: string, ms = 2000): Promise<ContentDoc | null> {
+async function tryFetch(url: string, ms = 2000, extraHeaders: Record<string, string> = {}): Promise<ContentDoc | null> {
   try {
     const ctrl = new AbortController()
     const timer = setTimeout(() => ctrl.abort(), ms)
-    const res = await fetch(url, { signal: ctrl.signal, headers: { accept: 'application/json' } })
+    const res = await fetch(url, { signal: ctrl.signal, headers: { accept: 'application/json', ...extraHeaders } })
     clearTimeout(timer)
+    if (res.status === 401) clearTokenCache()
     if (!res.ok) return null
     const doc = await res.json()
     return isValid(doc) ? doc : null
@@ -153,7 +156,7 @@ export async function loadContent(): Promise<ContentSource> {
   //    entirely when the device is offline so launch never blocks on a doomed fetch
   //    (the offline APK falls straight through to bundled content — no stall).
   const online = typeof navigator === 'undefined' || navigator.onLine !== false
-  const fromApi = API_BASE && online ? await tryFetch(`${API_BASE}/api/content`) : null
+  const fromApi = API_BASE && online ? await tryFetch(`${API_BASE}/api/content`, 2000, await authHeaders()) : null
   if (fromApi) { applyContent(fromApi); cache(fromApi); return 'server' }
 
   // 2) bundled content.json shipped with the PWA (also updatable by ops/CDN)

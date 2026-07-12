@@ -52,12 +52,19 @@ app.use(cors({ origin: allowed, credentials: true }));
 app.use(rateLimit({ windowMs: 60_000, max: 120, standardHeaders: true }));
 app.use('/api/auth', rateLimit({ windowMs: 15 * 60_000, max: 20 }));
 
+// Liveness probe — intentionally open (no token) for load balancers/uptime checks.
 app.get('/api/health', (_req, res) => res.json({ ok: true, service: 'brain-booster-api' }));
 
-// Public, no-auth: the game content the PWA renders itself from.
-app.use('/api/content', contentRoutes);
-// Public, no-auth: batched activity-type delivery for the Activity Engine.
-app.use('/api/activities', activityRoutes);
+// OAuth2 token endpoint: tenant clientId/secret -> Bearer access token. This is
+// the bootstrap endpoint, so it is not itself behind the bearer gate.
+app.use('/api/oauth', adminAuth.oauthRouter);
+// Seed the web-app client so the browser build has stable credentials.
+adminAuth.seedWebAppClient().catch((e) => console.error('web-app client seed failed', e));
+
+// Game data APIs — now require a valid OAuth Bearer token (client credentials).
+// The web app obtains one from /api/oauth/token and sends it on every request.
+app.use('/api/content', adminAuth.requireBearer({ scope: 'content' }), contentRoutes);
+app.use('/api/activities', adminAuth.requireBearer({ scope: 'activities' }), activityRoutes);
 
 // Admin portal auth (captcha/login/logout/me/refresh/audit-logs).
 app.use('/api/admin/auth', adminAuth.router);
